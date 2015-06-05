@@ -1,4 +1,4 @@
-package {
+package com.innogames.as3communicator.utils {
 	import com.innogames.as3communicator.utils.InitializationUtils;
 
 	import org.hamcrest.assertThat;

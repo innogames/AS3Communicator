@@ -611,7 +611,7 @@ package com.innogames.as3communicator.controllers
 		}
 
 
-		private function getFQI(objDO:DisplayObject):String
+		testable function getFQI(objDO:DisplayObject):String
 		{
 			var strFQI:String = objDO.name;
 
