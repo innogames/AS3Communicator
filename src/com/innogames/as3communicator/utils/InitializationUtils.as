@@ -1,4 +1,4 @@
-package com.innogames.as3connector.utils{public class InitializationUtils{}}
+package com.innogames.as3communicator.utils{public class InitializationUtils{}}
 
 String.prototype['startsWith'] =
 		function (strCharacters:String):Boolean

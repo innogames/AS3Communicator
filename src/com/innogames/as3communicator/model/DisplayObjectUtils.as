@@ -1,4 +1,4 @@
-package com.innogames.as3connector.model {
+package com.innogames.as3communicator.model {
 	import avmplus.DescribeTypeJSON;
 	import avmplus.DescribeTypeJSON;
 	import avmplus.INCLUDE_ACCESSORS;
@@ -8,9 +8,9 @@ package com.innogames.as3connector.model {
 	import avmplus.getQualifiedClassName;
 	import avmplus.getQualifiedSuperclassName;
 
-	import com.innogames.as3connector.model.DisplayObjectUtils;
+	import com.innogames.as3communicator.model.DisplayObjectUtils;
 
-	import com.innogames.as3connector.model.DisplayObjectUtils;
+	import com.innogames.as3communicator.model.DisplayObjectUtils;
 
 	import flash.display.DisplayObject;
 	import flash.net.getClassByAlias;

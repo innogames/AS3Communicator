@@ -1,5 +1,5 @@
 package {
-	import com.innogames.as3connector.utils.InitializationUtils;
+	import com.innogames.as3communicator.utils.InitializationUtils;
 
 	import org.hamcrest.assertThat;
 

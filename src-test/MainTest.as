@@ -1,7 +1,7 @@
 package {
 
-	import com.innogames.as3connector.controllers.APIController;
-	import com.innogames.as3connector.model.DisplayObjectVO;
+	import com.innogames.as3communicator.controllers.APIController;
+	import com.innogames.as3communicator.model.DisplayObjectVO;
 
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;

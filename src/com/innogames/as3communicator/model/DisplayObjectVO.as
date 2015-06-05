@@ -1,4 +1,4 @@
-package com.innogames.as3connector.model
+package com.innogames.as3communicator.model
 {
 	import flash.display.DisplayObject;
 

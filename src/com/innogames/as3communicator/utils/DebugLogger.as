@@ -1,5 +1,5 @@
-package com.innogames.as3connector.utils {
-	import com.innogames.as3connector.io.javascript.JavaScriptConnector;
+package com.innogames.as3communicator.utils {
+	import com.innogames.as3communicator.io.javascript.JavaScriptConnector;
 
 	import flash.external.ExternalInterface;
 

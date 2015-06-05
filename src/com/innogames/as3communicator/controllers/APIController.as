@@ -1,11 +1,11 @@
-package com.innogames.as3connector.controllers
+package com.innogames.as3communicator.controllers
 {
 
 	import avmplus.getQualifiedClassName;
 
-	import com.innogames.as3connector.model.DisplayObjectUtils;
-	import com.innogames.as3connector.model.DisplayObjectVO;
-	import com.innogames.as3connector.utils.DebugLogger;
+	import com.innogames.as3communicator.model.DisplayObjectUtils;
+	import com.innogames.as3communicator.model.DisplayObjectVO;
+	import com.innogames.as3communicator.utils.DebugLogger;
 
 	import flash.display.DisplayObjectContainer;
 	import flash.display.DisplayObject;

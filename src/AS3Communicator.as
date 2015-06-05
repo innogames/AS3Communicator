@@ -1,12 +1,12 @@
 package
 {
-	import com.innogames.as3connector.controllers.APIController;
-	import com.innogames.as3connector.io.javascript.IConnector;
+	import com.innogames.as3communicator.controllers.APIController;
+	import com.innogames.as3communicator.io.javascript.IConnector;
 
-	import com.innogames.as3connector.io.javascript.JavaScriptConnector;
+	import com.innogames.as3communicator.io.javascript.JavaScriptConnector;
 
-	import com.innogames.as3connector.utils.DebugLogger;
-	import com.innogames.as3connector.utils.InitializationUtils;
+	import com.innogames.as3communicator.utils.DebugLogger;
+	import com.innogames.as3communicator.utils.InitializationUtils;
 
 	import flash.display.Sprite;
 	import flash.events.Event;

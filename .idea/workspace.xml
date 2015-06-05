@@ -54,7 +54,7 @@
         </entry>
       </file>
       <file leaf-file-name="DisplayObjectVO.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
@@ -75,7 +75,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding>
-                <element signature="e#12#72#0" expanded="true" />
+                <element signature="e#12#75#0" expanded="true" />
                 <element signature="n#!!block;n#MainTest#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#tearDown#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#testFindObjectByName_DotNotation#0;n#MainTest#0;n#!!top" expanded="true" />
@@ -95,7 +95,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <element signature="e#11#71#0" expanded="true" />
+                <element signature="e#11#74#0" expanded="true" />
                 <element signature="n#!!block;n#InitializationUtilsTest#0;n#InitializationUtilsTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#test_containsBefore_false_if_first_not_present#0;n#InitializationUtilsTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#test_containsBefore_false_if_last_not_present#0;n#InitializationUtilsTest#0;n#!!top" expanded="true" />
@@ -147,12 +147,12 @@
         </entry>
       </file>
       <file leaf-file-name="DisplayObjectUtils.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectUtils.as">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
               <folding>
-                <element signature="e#44#76#0" expanded="true" />
+                <element signature="e#47#79#0" expanded="true" />
                 <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
                 <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
                 <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
@@ -259,6 +259,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3-selenium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3-selenium" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -906,12 +934,12 @@
       <workItem from="1433503676657" duration="1439000" />
       <workItem from="1433505532850" duration="1110000" />
       <workItem from="1433507247663" duration="312000" />
-      <workItem from="1433507578305" duration="79000" />
+      <workItem from="1433507578305" duration="692000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63019000" />
+    <option name="totallyTimeSpent" value="63632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1218" extended-state="6" />
@@ -1006,12 +1034,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectUtils.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
-            <element signature="e#44#76#0" expanded="true" />
+            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
@@ -1071,7 +1099,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
@@ -1135,7 +1163,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
@@ -1199,7 +1227,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
@@ -1213,12 +1241,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectUtils.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#44#76#0" expanded="true" />
+            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
@@ -1278,7 +1306,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
@@ -1292,12 +1320,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectUtils.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#44#76#0" expanded="true" />
+            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
@@ -1357,7 +1385,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
@@ -1371,12 +1399,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectUtils.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#44#76#0" expanded="true" />
+            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
@@ -1441,12 +1469,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectUtils.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
-            <element signature="e#44#76#0" expanded="true" />
+            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
@@ -1479,7 +1507,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3connector/model/DisplayObjectVO.as">
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
@@ -1498,7 +1526,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#11#71#0" expanded="true" />
+            <element signature="e#11#74#0" expanded="true" />
             <element signature="n#!!block;n#InitializationUtilsTest#0;n#InitializationUtilsTest#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#test_containsBefore_false_if_first_not_present#0;n#InitializationUtilsTest#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#test_containsBefore_false_if_last_not_present#0;n#InitializationUtilsTest#0;n#!!top" expanded="true" />
@@ -1515,7 +1543,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
           <folding>
-            <element signature="e#12#72#0" expanded="true" />
+            <element signature="e#12#75#0" expanded="true" />
             <element signature="n#!!block;n#MainTest#0;n#MainTest#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#tearDown#0;n#MainTest#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#testFindObjectByName_DotNotation#0;n#MainTest#0;n#!!top" expanded="true" />

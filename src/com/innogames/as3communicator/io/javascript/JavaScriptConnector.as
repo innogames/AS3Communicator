@@ -1,7 +1,7 @@
-package com.innogames.as3connector.io.javascript {
-	import com.innogames.as3connector.controllers.APIController;
-	import com.innogames.as3connector.utils.DebugLogger;
-	import com.innogames.as3connector.utils.IDebugLogger;
+package com.innogames.as3communicator.io.javascript {
+	import com.innogames.as3communicator.controllers.APIController;
+	import com.innogames.as3communicator.utils.DebugLogger;
+	import com.innogames.as3communicator.utils.IDebugLogger;
 
 	import flash.external.ExternalInterface;
 	import flash.system.Security;

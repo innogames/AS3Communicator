@@ -1,4 +1,4 @@
-package com.innogames.as3connector.io.javascript {
+package com.innogames.as3communicator.io.javascript {
 
 	public interface IConnector
 	{
