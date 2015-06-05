@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="flexUnitTasks-4.2.0-20140410-sources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../lib/as3unit/flexunit/flexUnitTasks-4.2.0-20140410.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../lib/as3unit/flexunit/flexunit-4.2.0-20140410-as3_4.12.0.swc!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../lib/as3unit/flexunit/flexUnitTasks-4.2.0-20140410-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/../lib/as3unit/flexunit" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../lib/as3unit/flexunit" recursive="false" type="SOURCES" />
+  </library>
+</component>
