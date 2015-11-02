@@ -1,20 +1,10 @@
 package com.innogames.as3communicator.model {
 	import avmplus.DescribeTypeJSON;
-	import avmplus.DescribeTypeJSON;
-	import avmplus.INCLUDE_ACCESSORS;
-	import avmplus.INCLUDE_VARIABLES;
-	import avmplus.describeType;
-	import avmplus.describeTypeJSON;
 	import avmplus.getQualifiedClassName;
-	import avmplus.getQualifiedSuperclassName;
-
-	import com.innogames.as3communicator.model.DisplayObjectUtils;
-
-	import com.innogames.as3communicator.model.DisplayObjectUtils;
 
 	import flash.display.DisplayObject;
-	import flash.net.getClassByAlias;
 	import flash.utils.getDefinitionByName;
+
 
 	public class DisplayObjectUtils {
 		public function DisplayObjectUtils() {
@@ -38,21 +28,34 @@ package com.innogames.as3communicator.model {
 			var uintFlags			:uint	= avmplus.INCLUDE_ACCESSORS | avmplus.INCLUDE_VARIABLES;
 			var strClassType		:String	= getQualifiedClassName(displayObject);
 			var strPropName			:String;
-			var objClass			:Class	= getDefinitionByName(strClassType) as Class;
-			var objClassDescription	:Object	= new DescribeTypeJSON().getInstanceDescription(objClass);
-			var vecClassProperties	:Vector.<String> = new <String>[];
+			var objClass			:Class;
 
-			//get accessors
-			for each(var objCurrentProp:Object in objClassDescription.traits.accessors)
+			try
 			{
-				strPropName = objCurrentProp.name;
-
-				if (DisplayObjectUtils.isWriteOnly(strPropName, objClassDescription)) continue;
-
-				vecClassProperties[vecClassProperties.length] = strPropName;
+				objClass = getDefinitionByName(strClassType) as Class;
+			}
+			catch(err: ReferenceError)
+			{
+				objClass = null;
 			}
 
-			vecClassProperties.sort(DisplayObjectUtils.sortVector);
+			if(objClass)
+			{
+				var objClassDescription:Object = new DescribeTypeJSON().getInstanceDescription(objClass);
+				var vecClassProperties:Vector.<String> = new <String>[];
+
+				//get accessors
+				for each(var objCurrentProp:Object in objClassDescription.traits.accessors)
+				{
+					strPropName = objCurrentProp.name;
+
+					if (DisplayObjectUtils.isWriteOnly(strPropName, objClassDescription)) continue;
+
+					vecClassProperties[vecClassProperties.length] = strPropName;
+				}
+
+				vecClassProperties.sort(DisplayObjectUtils.sortVector);
+			}
 
 			var objResultJSON:Object = {};
 			for each(var strCurrentProp:String in vecClassProperties)

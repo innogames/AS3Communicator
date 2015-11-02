@@ -38,9 +38,7 @@ package com.innogames.as3communicator.controllers
 
 		public function APIController(objEnforcer:SingletonEnforcer)
 		{
-			if(!(
-							objEnforcer
-					) is SingletonEnforcer)
+			if(!(objEnforcer) is SingletonEnforcer)
 			{
 				throw new ArgumentError('APIController must be invoked with SingletonEnforcer object. Use'
 										+ ' APIController.instance!');
@@ -105,7 +103,8 @@ package com.innogames.as3communicator.controllers
 			var objJSON:Object = {elements:[]};
 			for each (var objDO:DisplayObjectVO in vecAllObjects)
 			{
-				objJSON.elements[objJSON.elements.length] = {
+				objJSON.elements[objJSON.elements.length] =
+				{
 					'type'      :getQualifiedClassName(objDO.displayObject),
 					'properties':objDO.objectData
 				};
@@ -161,7 +160,7 @@ package com.innogames.as3communicator.controllers
 
 		public function findAllObjectsOnStage(blnCreateJSONData:Boolean = false):Vector.<DisplayObjectVO>
 		{
-			var vecDisplayObjects:Vector.<DisplayObjectVO> = this.getChildren(this.objStage, blnCreateJSONData);
+			var vecDisplayObjects:Vector.<DisplayObjectVO> = this.getChildren(this.objStage as DisplayObject, blnCreateJSONData);
 
 			return vecDisplayObjects;
 		}
@@ -210,9 +209,7 @@ package com.innogames.as3communicator.controllers
 
 			if(!objectToClick) return 'Object "' + strName + '" not found.';
 
-			if(!(
-							objectToClick is InteractiveObject
-					))
+			if(!(objectToClick is InteractiveObject))
 			{
 				if(objectToClick.parent && objectToClick.parent is InteractiveObject)
 				{
@@ -220,9 +217,7 @@ package com.innogames.as3communicator.controllers
 				}
 			}
 
-			if((
-							objectToClick is InteractiveObject
-					))
+			if((objectToClick is InteractiveObject))
 			{
 				this.emulateClickOnObject(objectToClick as InteractiveObject);
 				return 'Object \'' + strName + '\' clicked';
@@ -263,9 +258,7 @@ package com.innogames.as3communicator.controllers
 				for(var len:int = arrObjects.length, i:int = len; --i < len;)
 				{
 					objCurrentObject = arrObjects[i];
-					if(!(
-									objCurrentObject is InteractiveObject
-							))
+					if(!(objCurrentObject is InteractiveObject))
 					{
 						if(objCurrentObject.parent && objCurrentObject.parent is InteractiveObject)
 						{
@@ -305,7 +298,7 @@ package com.innogames.as3communicator.controllers
 		{
 			var result:DisplayObjectVO = this.findObjectVOByName(strName, vecObjectList);
 
-			if(result) return result.displayObject;
+			if(result) return result.displayObject as DisplayObject;
 
 			return null;
 		}

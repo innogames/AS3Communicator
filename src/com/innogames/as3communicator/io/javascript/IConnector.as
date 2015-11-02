@@ -2,6 +2,8 @@ package com.innogames.as3communicator.io.javascript {
 
 	public interface IConnector
 	{
-		function setup():Boolean;
+		function exposeMethod(methodName:String, callable:Function, description:String):void;
+
+		function setup(strDOMName:String):Boolean;
 	}
 }

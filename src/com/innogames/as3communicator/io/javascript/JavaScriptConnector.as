@@ -7,12 +7,12 @@ package com.innogames.as3communicator.io.javascript {
 	import flash.system.Security;
 
 	/**
-	 * Class comment.
+	 * Creates a bridge between Flash and JavaScript. Exposes all accessible API methods to JavaScript.
 	 */
 	public class JavaScriptConnector implements IDebugLogger, IConnector
 	{
 		private static const JS_CONNECTION_SCRIPT:XML = <script><![CDATA[
-			function()
+			function(strDOMName)
 			{
 				var objDomTree = document.getElementsByTagName('object');
 				if(!objDomTree || objDomTree.length < 1) throw new Error('Couldn\'t find Flash Object!');
@@ -24,6 +24,8 @@ package com.innogames.as3communicator.io.javascript {
 					objCurrent = objDomTree[i];
 					if(objCurrent.type.toLowerCase() !== 'application/x-shockwave-flash') continue;
 
+					if(strDOMName && objCurrent.name !== strDOMName) continue;
+
 					try
 					{
 						console.log('Found Flash object with name: "'+ objCurrent.name +'", id: "'+ objCurrent.id +'", data: "'+ objCurrent.data +'"');
@@ -34,6 +36,12 @@ package com.innogames.as3communicator.io.javascript {
 					}
 
 					$flash = objCurrent;
+					break;
+				}
+
+				if(!$flash)
+				{
+					console.log('Didn\'t find object with name "'+ strDOMName +'"');
 				}
 			}
 		]]></script>;
@@ -82,14 +90,30 @@ package com.innogames.as3communicator.io.javascript {
 		}
 
 
-		public function setup():Boolean
+		public function exposeMethod(methodName:String, callable:Function, description:String):void
+		{
+			if(!this.vecAPI)
+			{
+				this.vecAPI = new<APIMethod>[];
+			}
+
+			var objAPIMethod:APIMethod = new APIMethod(methodName, callable, description);
+			this.vecAPI[this.vecAPI.length]  = objAPIMethod;
+			ExternalInterface.addCallback(objAPIMethod.name, objAPIMethod.closure)
+		}
+
+
+		public function setup(strDOMName:String):Boolean
 		{
 			if (!ExternalInterface.available) return false;
 
 			var objController:APIController = APIController.instance;
 			var objAPIMethod:APIMethod;
 
-			this.vecAPI = new<APIMethod>[];
+			if(!this.vecAPI)
+			{
+				this.vecAPI = new <APIMethod>[];
+			}
 
 			objAPIMethod					= new APIMethod('clickAtPosition', objController.clickAtPosition);
 			objAPIMethod.description		= objAPIMethod.name + '(x, y) - Clicks on the specified position on screen';
@@ -177,12 +201,12 @@ package com.innogames.as3communicator.io.javascript {
 			for(var i:int = 0, intLength:int = this.vecAPI.length; i < intLength; ++i)
 			{
 				objAPIMethod = this.vecAPI[i] as APIMethod;
-				ExternalInterface.addCallback(objAPIMethod.name, objAPIMethod.closure)
+				ExternalInterface.addCallback(objAPIMethod.name, objAPIMethod.closure);
 			}
 
 			DebugLogger.instance.log('SandboxType: '+ Security.sandboxType);
 			ExternalInterface.marshallExceptions = true;
-			ExternalInterface.call(JavaScriptConnector.JS_CONNECTION_SCRIPT);
+			ExternalInterface.call(JavaScriptConnector.JS_CONNECTION_SCRIPT, strDOMName);
 			DebugLogger.instance.log('JavaScriptConnector setup.');
 
 			return true;
@@ -197,7 +221,7 @@ package com.innogames.as3communicator.io.javascript {
 			for(var i:int = 0, intLength:int = this.vecAPI.length; i < intLength; ++i)
 			{
 				objAPIMethod = this.vecAPI[i] as APIMethod;
-				result += objAPIMethod.description +'\n\n';
+				result += objAPIMethod.name +' - '+ objAPIMethod.description +'\n\n';
 			}
 
 			return result;
