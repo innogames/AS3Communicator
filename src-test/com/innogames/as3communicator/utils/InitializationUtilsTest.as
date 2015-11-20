@@ -1,11 +1,11 @@
 package com.innogames.as3communicator.utils {
-	import com.innogames.as3communicator.utils.InitializationUtils;
+	import com.innogames.as3communicator.utils.StringPrototypeFunctionsInitializer;
 
 	import org.hamcrest.assertThat;
 
 	public class InitializationUtilsTest {
 
-		InitializationUtils;
+		StringPrototypeFunctionsInitializer;
 
 		public function InitializationUtilsTest() {
 		}

@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b271e58-8dc0-44d1-a784-18566231c2c7" name="Default" comment="" />
+    <list default="true" id="0b271e58-8dc0-44d1-a784-18566231c2c7" name="Default" comment="Big refactoring of APIController -&gt; split methods into several separate commands&#10;Output can now be formatted with JSON or XML&#10;Big overall performance boost ~2000% due to removing of a redundant method">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ClickAtPositionCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ClickObjectCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/CountObjectsOnStageCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/FindObjectVOByNameCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/GetObjectPropertyCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ICommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/SetObjectPropertyCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ToggleHighlightCommand.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/errors/ErrorConstants.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/IResultFormatter.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/JSONFormatter.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/XMLFormatter.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DisplayObjectVOIteratorUtil.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DisplayObjectVOPool.as" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/atlassian-ide-plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/flexCompiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/flexUnitTasks_4_2_0_20140410_sources.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_as3_only_1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/as3-selenium/AS3Communicator-lib.swc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/as3-selenium/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/as3-selenium/index.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/as3-selenium/js/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/as3-selenium/swfobject.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/AS3Communicator/_flexunit.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/as3-selenium/_flexunit.swf" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/InitializationUtils.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/StringPrototypeFunctionsInitializer.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AS3Communicator.iml" afterPath="$PROJECT_DIR$/AS3Communicator.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-test/MainTest.as" afterPath="$PROJECT_DIR$/src-test/MainTest.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-test/com/innogames/as3communicator/controllers/APIControllerTest.as" afterPath="$PROJECT_DIR$/src-test/com/innogames/as3communicator/controllers/APIControllerTest.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-test/com/innogames/as3communicator/utils/InitializationUtilsTest.as" afterPath="$PROJECT_DIR$/src-test/com/innogames/as3communicator/utils/InitializationUtilsTest.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AS3Communicator.as" afterPath="$PROJECT_DIR$/src/AS3Communicator.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/IConnector.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/IConnector.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/JavaScriptConnector.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/JavaScriptConnector.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DebugLogger.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DebugLogger.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/IDebugLogger.as" afterPath="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/IDebugLogger.as" />
+    </list>
     <ignored path="as3-selenium.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,15 +77,16 @@
     <favorites_list name="as3-selenium" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AS3Communicator.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AS3Communicator.as">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JavaScriptConnector.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/JavaScriptConnector.as">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+              <caret line="209" column="53" selection-start-line="209" selection-start-column="53" selection-end-line="209" selection-end-column="53" />
               <folding>
-                <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-                <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#JavaScriptConnector#0;n#JavaScriptConnector#0;n#javascript#0" expanded="true" />
+                <element signature="n#!!block;n#exposeMethod#0;n#JavaScriptConnector#0;n#javascript#0" expanded="true" />
+                <element signature="n#!!block;n#proxyFindAllObjectsOnStage#0;n#JavaScriptConnector#0;n#javascript#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,14 +94,14 @@
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.862069">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+            <state vertical-scroll-proportion="-12.965517">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -57,13 +109,14 @@
         <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding>
                 <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+                <element signature="n#!!block;n#children#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
                 <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+                <element signature="n#!!block;n#displayObject#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
                 <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-                <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-                <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+                <marker date="1448044754000" expanded="true" signature="644:731" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -72,18 +125,35 @@
       <file leaf-file-name="MainTest.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src-test/MainTest.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+            <state vertical-scroll-proportion="-6.4444447">
+              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding>
                 <element signature="e#12#75#0" expanded="true" />
                 <element signature="n#!!block;n#MainTest#0;n#MainTest#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#setUp#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#tearDown#0;n#MainTest#0;n#!!top" expanded="true" />
-                <element signature="n#!!block;n#testFindObjectByName_DotNotation#0;n#MainTest#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#test_getObjectProperty#0;n#MainTest#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#test_setObjectProperty#0;n#MainTest#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#test_countObjectsOnStage#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_last#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_inbetween#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_first#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_only#0;n#MainTest#0;n#!!top" expanded="true" />
                 <element signature="n#!!block;n#testFindObjectByName_on_real_example#0;n#MainTest#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#test_formatTreeJSON#0;n#MainTest#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#test_formatTreeXML#0;n#MainTest#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FindObjectVOByNameCommand.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/FindObjectVOByNameCommand.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding>
+                <marker date="1448044533000" expanded="false" signature="60:184" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -93,22 +163,76 @@
         <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="614" column="9" selection-start-line="614" selection-start-column="9" selection-end-line="614" selection-end-column="9" />
-              <folding />
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#instance#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#parentContainer#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#parentContainer#1;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#setFormatter#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#countObjectsOnStage#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#getAllObjectsOnStage#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#getObjectTree#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#findAllObjectsOnStage#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#clickObject#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#clickAtPosition#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#getObjectProperty#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#setObjectProperty#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#toggleHighlight#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#findObject#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#toggleCursorPosition#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#getObjectAtPosition#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#toggleHighlightUnderCursor#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#mouseMoveHandler#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#highlightMoveHandler#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#findObjectByName#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!block;n#getFQI#0;n#APIController#0;n#controllers#0" expanded="true" />
+                <marker date="1448044533000" expanded="true" signature="10776:10779" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APIControllerTest.as" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src-test/com/innogames/as3communicator/controllers/APIControllerTest.as">
+      <file leaf-file-name="IResultFormatter.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/IResultFormatter.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8121911">
-              <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="86" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
               <folding>
-                <element signature="e#53#116#0" expanded="true" />
-                <element signature="n#!!block;n#APIControllerTest#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
-                <element signature="n#!!block;n#setUp#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
-                <element signature="n#!!block;n#tearDown#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
+                <element signature="n#!!doc;n#IResultFormatter#0;n#formatters#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSONFormatter.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/JSONFormatter.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
+              <folding>
+                <element signature="n#!!doc;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#formatTree#0;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#formatVO#0;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#recursiveGetChildrenToJSON#0;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+                <marker date="1448044533000" expanded="true" signature="755:1130" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XMLFormatter.as" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/XMLFormatter.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33476394">
+              <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+              <folding>
+                <element signature="e#58#95#0" expanded="true" />
+                <element signature="n#!!doc;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#XMLFormatter#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#formatTree#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#formatTreeWithProperties#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+                <element signature="n#!!block;n#formatVO#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,14 +242,12 @@
         <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding>
-                <element signature="e#47#79#0" expanded="true" />
                 <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
                 <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-                <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-                <element signature="n#!!block;n#sortVector#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-                <element signature="n#!!block;n#isNativeType#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+                <element signature="n#!!block;n#toXML#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+                <marker date="1448044533000" expanded="true" signature="303:4129" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -136,10 +258,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="ActionScript Interface" />
         <option value="ActionScript Class" />
         <option value="ActionScript Class with Supers" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -164,30 +290,56 @@
         <option value="$PROJECT_DIR$/src/Main.as" />
         <option value="$PROJECT_DIR$/src/com/innogames/as3selenium/model/DisplayObjectVO.as" />
         <option value="$PROJECT_DIR$/src/AS3Selenium.as" />
-        <option value="$PROJECT_DIR$/src-test/MainTest.as" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src-test/InitializationUtilsTest.as" />
-        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/IResultFormatter.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/errors/ErrorConstants.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/FindObjectByNameCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/traits/ITraitAgent.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/TraitModel.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/traits/ITrait.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/traits/GetChildrenTrait.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/VOIteratorUtil.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/StringPrototypeFunctionsInitializer.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/ICommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/FindObjectVOByNameCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/SetObjectPropertyCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/GetObjectPropertyCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/SetObjectPropertyCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/CountObjectsOnStageCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ClickObjectCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ClickAtPositionCommand.as" />
         <option value="$PROJECT_DIR$/src-test/com/innogames/as3communicator/controllers/APIControllerTest.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ToggleHighlightCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ToggleCursorPositionCommand.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/IResultFormatter.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/JSONFormatter.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/XMLFormatter.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/JavaScriptConnector.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/FindObjectVOByNameCommand.as" />
+        <option value="$PROJECT_DIR$/src-test/MainTest.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DisplayObjectVOPool.as" />
+        <option value="$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DisplayObjectVOIteratorUtil.as" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-  </component>
-  <component name="NamedScopeManager">
-    <order />
   </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1218" />
+    <option name="x" value="-1921" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -212,9 +364,11 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,6 +476,98 @@
               <option name="myItemId" value="as3communicator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="formatters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -345,9 +591,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="as3communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AS3Communicator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avmplus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -361,32 +651,38 @@
     <property name="recentsLimit" value="5" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15114796" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../game_foe_browser/Frontend/client/libs/hamcrest-as3-only-1.2.0.swc!/" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src-test" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="settings.editor.selected.configurable" value="flex.compiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.ActionScript" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="FullScreen" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Development\Projects\AS3Communicator\bin" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands" />
     </key>
     <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="" />
-      <recent name="avmplus" />
-      <recent name="com.innogames.as3selenium.model" />
-      <recent name="model" />
+      <recent name="com.innogames.as3communicator.utils" />
+      <recent name="com.innogames.as3communicator.controllers.commands" />
+      <recent name="com.innogames.as3communicator.model.formatters" />
+      <recent name="com.innogames.as3communicator.controllers.traits" />
+      <recent name="com.innogames.as3communicator.model" />
     </key>
     <key name="com.intellij.javascript.flex.refactoring.moveClass.FlexMoveClassDialog.target_package">
       <recent name="com.innogames.as3communicator.utils" />
       <recent name="com.innogames.as3selenium.model" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands" />
+      <recent name="$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters" />
+      <recent name="C:\Development\Projects\AS3Communicator\bin" />
+    </key>
   </component>
-  <component name="RunManager" selected="FlexUnit.APIControllerTest.test_getFQI_with_nullNames()">
+  <component name="RunManager" selected="FlexUnit.MainTest">
     <configuration default="false" name="MainTest" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" nameIsGenerated="true" appDescriptorForEmulator="Android" class_name="MainTest" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
       <option name="BCName" value="as3-communicator" />
       <option name="launcherParameters">
@@ -429,6 +725,34 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
+    <configuration default="false" name="APIControllerTest.test_getFQI_with_emptyNames()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" nameIsGenerated="true" appDescriptorForEmulator="Android" class_name="com.innogames.as3communicator.controllers.APIControllerTest" emulatorAdlOptions="" method_name="test_getFQI_with_emptyNames" package_name="" scope="Method">
+      <option name="BCName" value="as3-communicator" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="AS3Communicator" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MainTest.testFindObjectByName_DotNotation()" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" temporary="true" nameIsGenerated="true" appDescriptorForEmulator="Android" class_name="MainTest" emulatorAdlOptions="" method_name="testFindObjectByName_DotNotation" package_name="" scope="Method">
+      <option name="BCName" value="as3-communicator" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="AS3Communicator" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -453,6 +777,15 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -474,6 +807,15 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -498,6 +840,65 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -635,12 +1036,62 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AS3Communicator" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -741,17 +1192,32 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
-      <setting name="environment" value="" />
-      <setting name="specsToExecute" value="" />
-      <setting name="tags" value="" />
-      <setting name="parallelNodes" value="" />
-      <setting name="execInParallel" value="false" />
-      <setting name="programParameters" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="moduleName" value="" />
-      <envMap />
-      <setting name="rowsRange" value="" />
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -760,6 +1226,12 @@
       <tasks />
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
       <envs />
       <method />
     </configuration>
@@ -930,24 +1402,47 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Flash App.as3-communicator" />
       <item index="1" class="java.lang.String" itemvalue="FlexUnit.InitializationUtilsTest" />
       <item index="2" class="java.lang.String" itemvalue="FlexUnit.MainTest" />
       <item index="3" class="java.lang.String" itemvalue="FlexUnit.InitializationUtilsTest.test_containsBefore_false_if_last_not_present()" />
       <item index="4" class="java.lang.String" itemvalue="FlexUnit.APIControllerTest.test_getFQI_with_nullNames()" />
+      <item index="5" class="java.lang.String" itemvalue="FlexUnit.APIControllerTest.test_getFQI_with_emptyNames()" />
+      <item index="6" class="java.lang.String" itemvalue="FlexUnit.MainTest.testFindObjectByName_DotNotation()" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="FlexUnit.APIControllerTest.test_getFQI_with_nullNames()" />
-        <item index="1" class="java.lang.String" itemvalue="FlexUnit.MainTest" />
-        <item index="2" class="java.lang.String" itemvalue="FlexUnit.InitializationUtilsTest.test_containsBefore_false_if_last_not_present()" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="FlexUnit.MainTest" />
+        <item index="1" class="java.lang.String" itemvalue="FlexUnit.MainTest.testFindObjectByName_DotNotation()" />
+        <item index="2" class="java.lang.String" itemvalue="FlexUnit.APIControllerTest.test_getFQI_with_emptyNames()" />
+        <item index="3" class="java.lang.String" itemvalue="FlexUnit.APIControllerTest.test_getFQI_with_nullNames()" />
+        <item index="4" class="java.lang.String" itemvalue="FlexUnit.InitializationUtilsTest.test_containsBefore_false_if_last_not_present()" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
     <configuration />
+  </component>
+  <component name="Talios.JiraConfigurationComponent" enableIssueTracking="false" autoRefresh="false" useExternalBrowser="false" refreshTimeout="0" annotateissues="false">
+    <servers />
+    <columns>
+      <column id="created" position="0" width="-1" />
+      <column id="key" position="1" width="-1" />
+      <column id="component" position="2" width="-1" />
+      <column id="title" position="3" width="-1" />
+      <column id="type" position="4" width="-1" />
+      <column id="priority" position="5" width="-1" />
+      <column id="status" position="6" width="-1" />
+      <column id="resolution" position="7" width="-1" />
+      <column id="assignee" position="8" width="-1" />
+      <column id="reporter" position="9" width="-1" />
+      <column id="updated" position="10" width="-1" />
+      <column id="dueDate" position="11" width="-1" />
+      <column id="version" position="12" width="-1" />
+      <column id="fixVersion" position="13" width="-1" />
+    </columns>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -971,45 +1466,80 @@
       <workItem from="1433507247663" duration="312000" />
       <workItem from="1433507578305" duration="752000" />
       <workItem from="1433513976500" duration="1108000" />
+      <workItem from="1447777310658" duration="1390000" />
+      <workItem from="1447853969058" duration="716000" />
+      <workItem from="1447922486297" duration="38889000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MainTest - 2015.11.20 at 19h 04m 59s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 05m 26s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 07m 18s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 07m 29s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 07m 57s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 08m 27s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 08m 50s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 10m 13s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 10m 14s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="MainTest - 2015.11.20 at 19h 10m 30s.xml">
+      <configuration name="MainTest" configurationId="FlexUnitRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64800000" />
+    <option name="totallyTimeSpent" value="105795000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1218" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1921" y="23" width="1920" height="1177" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32745826" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17678382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2257721" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4109462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283859" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299539" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33087558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19914803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281106" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16240682" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36129034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1023,9 +1553,23 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Big refactoring of APIController -&gt; split methods into several separate commands&#10;Output can now be formatted with JSON or XML&#10;Big overall performance boost ~2000% due to removing of a redundant method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Big refactoring of APIController -&gt; split methods into several separate commands&#10;Output can now be formatted with JSON or XML&#10;Big overall performance boost ~2000% due to removing of a redundant method" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="67" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="93" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="FlexUnitRunConfigurationType">
@@ -1046,37 +1590,10 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding>
-            <element signature="e#47#79#0" expanded="true" />
-            <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#sortVector#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isNativeType#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AS3Communicator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html-template/index.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="90" column="65" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,30 +1601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#isReady#0" expanded="false" />
-            <element signature="n#!!block;n#getConsoleTextLength#0" expanded="false" />
-            <element signature="n#!!block;n#findObject#0" expanded="false" />
-            <element signature="n#!!block;n#getPropertyFromObject#0" expanded="false" />
-            <element signature="n#!!block;n#listPropertiesOfObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickAtPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/httpd.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="5" selection-start-line="243" selection-start-column="0" selection-end-line="269" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1117,138 +1610,11 @@
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#children#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#displayObject#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AS3Communicator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html-template/index.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="65" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html-template/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#isReady#0" expanded="false" />
-            <element signature="n#!!block;n#getConsoleTextLength#0" expanded="false" />
-            <element signature="n#!!block;n#findObject#0" expanded="false" />
-            <element signature="n#!!block;n#getPropertyFromObject#0" expanded="false" />
-            <element signature="n#!!block;n#listPropertiesOfObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickAtPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/httpd.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="5" selection-start-line="243" selection-start-column="0" selection-end-line="269" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AS3Communicator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html-template/index.template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="65" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html-template/js/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#isReady#0" expanded="false" />
-            <element signature="n#!!block;n#getConsoleTextLength#0" expanded="false" />
-            <element signature="n#!!block;n#findObject#0" expanded="false" />
-            <element signature="n#!!block;n#getPropertyFromObject#0" expanded="false" />
-            <element signature="n#!!block;n#listPropertiesOfObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickAtPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="80" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/httpd.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="5" selection-start-line="243" selection-start-column="0" selection-end-line="269" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <marker date="1448044754000" expanded="true" signature="644:731" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1258,12 +1624,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#sortVector#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isNativeType#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#toXML#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <marker date="1448044533000" expanded="true" signature="303:4129" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1274,6 +1638,7 @@
           <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
           <folding>
             <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#prepareInitialization#0;n#AS3Communicator#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1283,7 +1648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="90" column="65" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1291,30 +1655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#isReady#0" expanded="false" />
-            <element signature="n#!!block;n#getConsoleTextLength#0" expanded="false" />
-            <element signature="n#!!block;n#findObject#0" expanded="false" />
-            <element signature="n#!!block;n#getPropertyFromObject#0" expanded="false" />
-            <element signature="n#!!block;n#listPropertiesOfObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickAtPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="80" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/httpd.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="5" selection-start-line="243" selection-start-column="0" selection-end-line="269" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1324,10 +1664,11 @@
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#children#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#displayObject#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <marker date="1448044754000" expanded="true" signature="644:731" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1337,12 +1678,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#sortVector#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isNativeType#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#toXML#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <marker date="1448044533000" expanded="true" signature="303:4129" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1353,6 +1692,7 @@
           <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
           <folding>
             <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#prepareInitialization#0;n#AS3Communicator#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1362,7 +1702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="90" column="65" selection-start-line="90" selection-start-column="59" selection-end-line="90" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1370,30 +1709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#isReady#0" expanded="false" />
-            <element signature="n#!!block;n#getConsoleTextLength#0" expanded="false" />
-            <element signature="n#!!block;n#findObject#0" expanded="false" />
-            <element signature="n#!!block;n#getPropertyFromObject#0" expanded="false" />
-            <element signature="n#!!block;n#listPropertiesOfObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickAtPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="80" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/xampp/apache/conf/httpd.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="5" selection-start-line="243" selection-start-column="0" selection-end-line="269" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1403,10 +1718,11 @@
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#children#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#displayObject#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <marker date="1448044754000" expanded="true" signature="644:731" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1416,12 +1732,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#47#79#0" expanded="true" />
             <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
             <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#sortVector#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isNativeType#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#toXML#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <marker date="1448044533000" expanded="true" signature="303:4129" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1432,6 +1746,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#prepareInitialization#0;n#AS3Communicator#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1444,20 +1759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/xampp/apache/conf/httpd.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2908745">
-          <caret line="258" column="5" selection-start-line="243" selection-start-column="0" selection-end-line="269" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../AIR_SDKs/16/frameworks/libs/player/16.0/playerglobal.swc!/library.swf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33225808">
-          <caret line="552" column="23" selection-start-line="552" selection-start-column="23" selection-end-line="552" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/avmplus/DescribeTypeJSON.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1465,34 +1766,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/xampp/apache/conf/extra/httpd-vhosts.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="80" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html-template/index.template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding>
-            <element signature="e#47#79#0" expanded="true" />
-            <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isWriteOnly#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#sortVector#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#isNativeType#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1507,51 +1784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!block;n#isReady#0" expanded="false" />
-            <element signature="n#!!block;n#getConsoleTextLength#0" expanded="false" />
-            <element signature="n#!!block;n#findObject#0" expanded="false" />
-            <element signature="n#!!block;n#getPropertyFromObject#0" expanded="false" />
-            <element signature="n#!!block;n#listPropertiesOfObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickObject#0" expanded="false" />
-            <element signature="n#!!block;n#clickAtPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-            <element signature="n#!!block;n#jsonData#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AS3Communicator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.862069">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1559,45 +1791,451 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68">
           <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Flash/AS3Communicator:com.innogames.as3communicator.controllers.APIController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Flash</ID>
+          <OriginalElement>AS3Communicator:com.innogames.as3communicator.controllers.APIController</OriginalElement>
+          <nodes>
+            <node x="" y="">AS3Communicator:com.innogames.as3communicator.controllers.APIController</node>
+            <node x="" y="">Object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="58.5" y="55.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>PRIVATE</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/IConnector.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as">
+    <entry file="uml://Flash/AS3Communicator:com.innogames.as3communicator.io.javascript.JavaScriptConnector">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Flash</ID>
+          <OriginalElement>AS3Communicator:com.innogames.as3communicator.io.javascript.JavaScriptConnector</OriginalElement>
+          <nodes>
+            <node x="" y="">AS3Communicator:com.innogames.as3communicator.io.javascript.JavaScriptConnector</node>
+            <node x="" y="">Object</node>
+            <node x="" y="">AS3Communicator:com.innogames.as3communicator.utils.IDebugLogger</node>
+            <node x="" y="">AS3Communicator:com.innogames.as3communicator.io.javascript.IConnector</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="170.0" y="55.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>PRIVATE</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Flash/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Flash</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">ReferenceError</node>
+            <node x="" y="">URIError</node>
+            <node x="" y="">String</node>
+            <node x="" y="">Math</node>
+            <node x="" y="">skins</node>
+            <node x="" y="">AS3Communicator:AS3Communicator</node>
+            <node x="" y="">SyntaxError</node>
+            <node x="" y="">net</node>
+            <node x="" y="">Boolean</node>
+            <node x="" y="">AS3Communicator:MainTest</node>
+            <node x="" y="">RegExp</node>
+            <node x="" y="">flashx</node>
+            <node x="" y="">Walker</node>
+            <node x="" y="">mx</node>
+            <node x="" y="">Namespace</node>
+            <node x="" y="">starling</node>
+            <node x="" y="">VerifyError</node>
+            <node x="" y="">TypeError</node>
+            <node x="" y="">Class</node>
+            <node x="" y="">Object</node>
+            <node x="" y="">avmplus</node>
+            <node x="" y="">flash</node>
+            <node x="" y="">SecurityError</node>
+            <node x="" y="">components</node>
+            <node x="" y="">snake</node>
+            <node x="" y="">JSON</node>
+            <node x="" y="">air</node>
+            <node x="" y="">Function</node>
+            <node x="" y="">Number</node>
+            <node x="" y="">flex</node>
+            <node x="" y="">RangeError</node>
+            <node x="" y="">ApplicationUpdaterDialogs</node>
+            <node x="" y="">org</node>
+            <node x="" y="">QName</node>
+            <node x="" y="">adobe</node>
+            <node x="" y="">XMLList</node>
+            <node x="" y="">Error</node>
+            <node x="" y="">EvalError</node>
+            <node x="" y="">uint</node>
+            <node x="" y="">int</node>
+            <node x="" y="">Date</node>
+            <node x="" y="">Array</node>
+            <node x="" y="">UninitializedError</node>
+            <node x="" y="">DefinitionError</node>
+            <node x="" y="">XML</node>
+            <node x="" y="">avm2</node>
+            <node x="" y="">flexunit</node>
+            <node x="" y="">CoreClasses</node>
+            <node x="" y="">ArgumentError</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0646319569120286" x="597.7217537942665" y="400.404173106646" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>PRIVATE</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">docs</node>
+            <node x="" y="">locale</node>
+            <node x="" y="">avmplus</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="140.0" y="90.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/utils/StringPrototypeFunctionsInitializer.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="614" column="9" selection-start-line="614" selection-start-column="9" selection-end-line="614" selection-end-column="9" />
+          <caret line="0" column="61" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src-test/MainTest.as">
+    <entry file="file://$PROJECT_DIR$/src/AS3Communicator.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.15406562">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
-            <element signature="e#12#75#0" expanded="true" />
-            <element signature="n#!!block;n#MainTest#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#tearDown#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#testFindObjectByName_DotNotation#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_last#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_inbetween#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_first#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_only#0;n#MainTest#0;n#!!top" expanded="true" />
-            <element signature="n#!!block;n#testFindObjectByName_on_real_example#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#AS3Communicator#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#prepareInitialization#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#init#0;n#AS3Communicator#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ICommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/errors/ErrorConstants.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="95" selection-start-line="8" selection-start-column="95" selection-end-line="8" selection-end-column="95" />
+          <folding>
+            <element signature="n#!!doc;n#ErrorConstants#0;n#errors#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/GetObjectPropertyCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc;n#GetObjectPropertyCommand#0;n#commands#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/SetObjectPropertyCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#SetObjectPropertyCommand#0;n#commands#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/CountObjectsOnStageCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="89" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
+          <folding>
+            <element signature="n#!!doc;n#CountObjectsOnStageCommand#0;n#commands#0" expanded="false" />
+            <element signature="n#!!block;n#countObjectsRecursive#0;n#CountObjectsOnStageCommand#0;n#commands#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/utils/IDebugLogger.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05882353">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ClickObjectCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc;n#ClickObjectCommand#0;n#commands#0" expanded="false" />
+            <element signature="n#!!block;n#emulateClickOnObject#0;n#ClickObjectCommand#0;n#commands#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src-test/com/innogames/as3communicator/controllers/APIControllerTest.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8121911">
-          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+        <state vertical-scroll-proportion="-12.666667">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
           <folding>
-            <element signature="e#53#116#0" expanded="true" />
+            <element signature="e#53#132#0" expanded="true" />
             <element signature="n#!!block;n#APIControllerTest#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
             <element signature="n#!!block;n#setUp#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
             <element signature="n#!!block;n#tearDown#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#test_getFQI_with_emptyNames#0;n#APIControllerTest#0;n#controllers#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ClickAtPositionCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4635193">
+          <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
+          <folding>
+            <element signature="n#!!doc;n#ClickAtPositionCommand#0;n#commands#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../tools/AIR_SDKs/19/frameworks/libs/player/19.0/playerglobal.swc!/library.swf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="611" column="23" selection-start-line="611" selection-start-column="23" selection-end-line="611" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/ToggleHighlightCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6923077">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!doc;n#ToggleHighlightCommand#0;n#commands#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/IResultFormatter.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="86" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
+          <folding>
+            <element signature="n#!!doc;n#IResultFormatter#0;n#formatters#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectUtils.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!block;n#toObject#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#toJSON#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#toXML#0;n#DisplayObjectUtils#0;n#model#0" expanded="true" />
+            <marker date="1448044533000" expanded="true" signature="303:4129" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/JSONFormatter.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#formatTree#0;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#formatVO#0;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#recursiveGetChildrenToJSON#0;n#JSONFormatter#0;n#formatters#0" expanded="true" />
+            <marker date="1448044533000" expanded="true" signature="755:1130" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/io/javascript/JavaScriptConnector.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="209" column="53" selection-start-line="209" selection-start-column="53" selection-end-line="209" selection-end-column="53" />
+          <folding>
+            <element signature="n#!!block;n#JavaScriptConnector#0;n#JavaScriptConnector#0;n#javascript#0" expanded="true" />
+            <element signature="n#!!block;n#exposeMethod#0;n#JavaScriptConnector#0;n#javascript#0" expanded="true" />
+            <element signature="n#!!block;n#proxyFindAllObjectsOnStage#0;n#JavaScriptConnector#0;n#javascript#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/DisplayObjectVO.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!block;n#DisplayObjectVO#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#children#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#displayObject#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#displayObject#1;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <element signature="n#!!block;n#hasChildren#0;n#DisplayObjectVO#0;n#model#0" expanded="true" />
+            <marker date="1448044754000" expanded="true" signature="644:731" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-test/MainTest.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4444447">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#75#0" expanded="true" />
+            <element signature="n#!!block;n#MainTest#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#setUp#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#tearDown#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#test_getObjectProperty#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#test_setObjectProperty#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#test_countObjectsOnStage#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_last#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_inbetween#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_first#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#testFindObjectByName_ArrayNotation_only#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#testFindObjectByName_on_real_example#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#test_formatTreeJSON#0;n#MainTest#0;n#!!top" expanded="true" />
+            <element signature="n#!!block;n#test_formatTreeXML#0;n#MainTest#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/commands/FindObjectVOByNameCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding>
+            <marker date="1448044533000" expanded="false" signature="60:184" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DisplayObjectVOPool.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6240602">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#DisplayObjectVOPool#0;n#utils#0" expanded="false" />
+            <element signature="n#!!block;n#DisplayObjectVOPool#0;n#DisplayObjectVOPool#0;n#utils#0" expanded="false" />
+            <element signature="n#!!block;n#instance#0;n#DisplayObjectVOPool#0;n#utils#0" expanded="false" />
+            <element signature="n#!!block;n#freeAllElements#0;n#DisplayObjectVOPool#0;n#utils#0" expanded="false" />
+            <element signature="n#!!block;n#freeElement#0;n#DisplayObjectVOPool#0;n#utils#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/utils/DisplayObjectVOIteratorUtil.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027067669">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc;n#DisplayObjectVOIteratorUtil#0;n#utils#0" expanded="false" />
+            <element signature="n#!!block;n#getChildren#0;n#DisplayObjectVOIteratorUtil#0;n#utils#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/controllers/APIController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#instance#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#parentContainer#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#parentContainer#1;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#setFormatter#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#countObjectsOnStage#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#getAllObjectsOnStage#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#getObjectTree#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#findAllObjectsOnStage#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#clickObject#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#clickAtPosition#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#getObjectProperty#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#setObjectProperty#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#toggleHighlight#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#findObject#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#toggleCursorPosition#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#getObjectAtPosition#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#toggleHighlightUnderCursor#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#mouseMoveHandler#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#highlightMoveHandler#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#findObjectByName#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <element signature="n#!!block;n#getFQI#0;n#APIController#0;n#controllers#0" expanded="true" />
+            <marker date="1448044533000" expanded="true" signature="10776:10779" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.965517">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/innogames/as3communicator/model/formatters/XMLFormatter.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33476394">
+          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+          <folding>
+            <element signature="e#58#95#0" expanded="true" />
+            <element signature="n#!!doc;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#XMLFormatter#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#formatTree#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#formatTreeWithProperties#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
+            <element signature="n#!!block;n#formatVO#0;n#XMLFormatter#0;n#formatters#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1642,7 +2280,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1654,12 +2292,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>AS3Communicator</last-edited>
+          <last-edited>as3-communicator|AS3Communicator</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1667,7 +2304,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>flexUnitTasks-4.2.0-20140410-sources</last-edited>
+          <last-edited>hamcrest-as3-only-1.2.01</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

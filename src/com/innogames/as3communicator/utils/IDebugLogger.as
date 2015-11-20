@@ -1,4 +1,5 @@
-package com.innogames.as3communicator.utils {
+package com.innogames.as3communicator.utils
+{
 
 	public interface IDebugLogger
 	{

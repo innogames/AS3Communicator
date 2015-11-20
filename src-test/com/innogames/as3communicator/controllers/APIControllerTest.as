@@ -1,6 +1,6 @@
 package com.innogames.as3communicator.controllers
 {
-	import com.innogames.as3communicator.utils.InitializationUtils;
+	import com.innogames.as3communicator.utils.StringPrototypeFunctionsInitializer;
 
 	import flash.display.DisplayObject;
 	import flash.display.Shape;
@@ -20,7 +20,7 @@ package com.innogames.as3communicator.controllers
 
 		[BeforeClass]
 		{
-			InitializationUtils;
+			StringPrototypeFunctionsInitializer;
 		}
 
 		public function APIControllerTest()
@@ -53,12 +53,13 @@ package com.innogames.as3communicator.controllers
 			this.objDisplayObjectContainingNullNames = null;
 		}
 
+
 		[Test]
 		public function test_getFQI_with_emptyNames():void
 		{
 			var strFQI:String = this.objAPIController.getFQI((this.objDisplayObjectContainingNullNames.getChildAt(0) as Sprite).getChildAt(0));
 
-			assertThat(strFQI, 'first..shape');
+			assertThat(strFQI, 'first(flash.display::Sprite).(flash.display::Sprite).shape(flash.display::Shape)');
 		}
 	}
 }

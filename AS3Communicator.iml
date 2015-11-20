@@ -5,16 +5,19 @@
       <configuration name="as3-communicator" pure-as="true" main-class="AS3Communicator" output-file="index.swf" output-folder="$MODULE_DIR$/out/production/as3-selenium" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="19.0">
           <entries>
-            <entry library-id="2cb5bfba-014f-4f54-a20e-7cff5ac09d91">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-id="5787490a-5921-4f14-b7e3-046758645ff9">
-              <dependency linkage="Merged" />
-            </entry>
             <entry library-id="a712ff6c-e5e3-4cb9-89d4-08375035d32d">
               <dependency linkage="Merged" />
             </entry>
             <entry library-id="0269dc4d-998a-41aa-8553-1922722b8b63">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="926aef81-85f6-4d49-a59d-8fdf1ecc9a2a">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="b6400e39-5b22-4cb3-a66c-49671e86b3b9">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="e7841d17-c5e3-4035-a981-8319404e0224">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -56,26 +59,6 @@
     <orderEntry type="library" exported="" name="flexUnitTasks-4.2.0-20140410-sources" level="project" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="2cb5bfba-014f-4f54-a20e-7cff5ac09d91" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/as3unit/flexunit/flexunit-4.2.0-20140410-as3_4.12.0.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="5787490a-5921-4f14-b7e3-046758645ff9" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/hamcrest-as3-only-1.2.0.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
         <properties id="73bf9b7e-7245-4001-9d46-6c948503dc43" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/starling-1.5.1.innogames-custom.swc!/" />
@@ -109,6 +92,44 @@
         <properties id="0269dc4d-998a-41aa-8553-1922722b8b63" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/snake-0.5.1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="926aef81-85f6-4d49-a59d-8fdf1ecc9a2a" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" />
+        </SOURCES>
+        <jarDirectory url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" recursive="false" />
+        <jarDirectory url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" recursive="false" type="JAVADOC" />
+        <jarDirectory url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/build/flexUnitTasks.jar!/" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="b6400e39-5b22-4cb3-a66c-49671e86b3b9" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/flexunit-4.2.0-20140410-as3_4.12.0.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="e7841d17-c5e3-4035-a981-8319404e0224" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/hamcrest-as3-only-1.2.0.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

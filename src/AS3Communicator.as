@@ -6,7 +6,7 @@ package
 	import com.innogames.as3communicator.io.javascript.JavaScriptConnector;
 
 	import com.innogames.as3communicator.utils.DebugLogger;
-	import com.innogames.as3communicator.utils.InitializationUtils;
+	import com.innogames.as3communicator.utils.StringPrototypeFunctionsInitializer;
 
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -14,7 +14,7 @@ package
 
 	public class AS3Communicator extends Sprite
 	{
-		InitializationUtils;
+		StringPrototypeFunctionsInitializer;
 
 		/**
 		 * Adding the connectors to the outside world. For now there's only a JavaScriptConnector, but it could
@@ -26,7 +26,7 @@ package
 		private var strDOMName:String;
 
 		/**
-		 * Creates the instance of AS3Communicator and adds itself to stage.
+		 * Creates the instance of AS3Communicator and adds itself to parentContainer.
 		 *
 		 * @param domName The element name in the HTML DOM tree to look for. If omitted, the first flash object in the
 		 * page will be used.
@@ -74,7 +74,7 @@ package
 
 		private function init(evt:Event):void
 		{
-			APIController.instance.stage = this.stage;
+			APIController.instance.parentContainer = this.stage;
 
 			if(this.hasEventListener(Event.ADDED_TO_STAGE))
 			{

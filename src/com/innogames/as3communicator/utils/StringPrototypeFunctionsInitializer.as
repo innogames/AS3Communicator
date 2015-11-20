@@ -1,4 +1,9 @@
-package com.innogames.as3communicator.utils{public class InitializationUtils{}}
+package com.innogames.as3communicator.utils
+{
+	public class StringPrototypeFunctionsInitializer
+	{
+	}
+}
 
 String.prototype['startsWith'] =
 		function (strCharacters:String):Boolean
@@ -7,7 +12,7 @@ String.prototype['startsWith'] =
 		};
 
 String.prototype['contains'] =
-		function(...arrCharacters:Array):Boolean
+		function (...arrCharacters:Array):Boolean
 		{
 			for(var i:int, len:int = arrCharacters.length; i < len; ++i)
 			{
@@ -29,13 +34,13 @@ String.prototype['containsAny'] =
 		};
 
 String.prototype['containsIgnoreCase'] =
-	   function(strCharacters:String):Boolean
-	   {
-		 return this.toLowerCase().indexOf(strCharacters.toLowerCase()) !== -1;
-	   };
+		function (strCharacters:String):Boolean
+		{
+			return this.toLowerCase().indexOf(strCharacters.toLowerCase()) !== -1;
+		};
 
 String.prototype['containsBefore'] =
-		function(strShouldBeBefore:String,  strShouldBeAfter:String):Boolean
+		function (strShouldBeBefore:String, strShouldBeAfter:String):Boolean
 		{
 			var intLowIndex:int = this.indexOf(strShouldBeAfter);
 			if(intLowIndex === -1)
@@ -51,19 +56,19 @@ String.prototype['containsBefore'] =
 		};
 
 String.prototype['substringAfter'] =
-		function (strStartCharacters:String): String
+		function (strStartCharacters:String):String
 		{
 			return this.substring(this.indexOf(strStartCharacters) + strStartCharacters.length);
 		};
 
 String.prototype['substringBefore'] =
-		function (strEndCharacters: String):String
+		function (strEndCharacters:String):String
 		{
 			return this.substring(0, this.indexOf(strEndCharacters));
 		};
 
 String.prototype['substringBetween'] =
-	   function(strStartCharacters:String, strEndCharacters:String):String
-	   {
-		   return this.substring(this.indexOf(strStartCharacters) + strStartCharacters.length, this.indexOf(strEndCharacters));
-	   };
+		function (strStartCharacters:String, strEndCharacters:String):String
+		{
+			return this.substring(this.indexOf(strStartCharacters) + strStartCharacters.length, this.indexOf(strEndCharacters));
+		};

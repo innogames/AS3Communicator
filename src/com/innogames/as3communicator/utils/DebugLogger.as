@@ -1,4 +1,5 @@
-package com.innogames.as3communicator.utils {
+package com.innogames.as3communicator.utils
+{
 	import com.innogames.as3communicator.io.javascript.JavaScriptConnector;
 
 	import flash.external.ExternalInterface;
@@ -9,28 +10,11 @@ package com.innogames.as3communicator.utils {
 	public class DebugLogger
 	{
 
-		public static const LOG_TO_JS_CONSOLE	:int =      1,
-							LOG_TO_TRACE		:int = 1 << 1,
-							LOG_TO_INTERFACE	:int = 1 << 2;
+		public static const LOG_TO_JS_CONSOLE:int = 1,
+				LOG_TO_TRACE:int = 1 << 1,
+				LOG_TO_INTERFACE:int = 1 << 2;
 
 		private static var objInstance:DebugLogger;
-
-		private var blnUseJSConsole		:Boolean,
-					intLogOptions		:int,
-					vecInterfaceLoggers	:Vector.<IDebugLogger>;
-
-		public function DebugLogger(objEnforcer:SingletonEnforcer)
-		{
-			if(!(objEnforcer) is SingletonEnforcer)
-			{
-				throw new ArgumentError('DebugLogger must be invoked with SingletonEnforcer object. Use'
-										+ ' DebugLogger.instance!');
-			}
-
-			DebugLogger.objInstance = this;
-
-			this.blnUseJSConsole = ExternalInterface.available;
-		}
 
 		public static function get instance():DebugLogger
 		{
@@ -43,6 +27,31 @@ package com.innogames.as3communicator.utils {
 			return objInstance;
 		}
 
+		public function DebugLogger(objEnforcer:SingletonEnforcer)
+		{
+			if(!(objEnforcer) is SingletonEnforcer)
+			{
+				throw new ArgumentError('DebugLogger must be invoked with SingletonEnforcer object. Use'
+						+ ' DebugLogger.instance!');
+			}
+
+			DebugLogger.objInstance = this;
+
+			this.blnUseJSConsole = ExternalInterface.available;
+		}
+		private var blnUseJSConsole:Boolean,
+				intLogOptions:int,
+				vecInterfaceLoggers:Vector.<IDebugLogger>;
+
+		public function get logOptions():int
+		{
+			return this.intLogOptions;
+		}
+
+		public function set logOptions(intOptions:int):void
+		{
+			this.intLogOptions = intOptions;
+		}
 
 		public function addLogInterface(objLogger:IDebugLogger):void
 		{
@@ -53,7 +62,6 @@ package com.innogames.as3communicator.utils {
 
 			this.vecInterfaceLoggers[this.vecInterfaceLoggers.length] = objLogger;
 		}
-
 
 		public function log(strMessage:String):void
 		{
@@ -76,7 +84,6 @@ package com.innogames.as3communicator.utils {
 			}
 		}
 
-
 		public function removeLogInterface(objLogger:IDebugLogger):void
 		{
 			if(this.vecInterfaceLoggers === null) return;
@@ -94,18 +101,9 @@ package com.innogames.as3communicator.utils {
 				this.vecInterfaceLoggers = null;
 			}
 		}
-
-
-		public function get logOptions():int
-		{
-			return this.intLogOptions;
-		}
-
-		public function set logOptions(intOptions:int):void
-		{
-			this.intLogOptions = intOptions;
-		}
 	}
 }
 
-internal class SingletonEnforcer {}
+internal class SingletonEnforcer
+{
+}
