@@ -160,9 +160,10 @@ package com.innogames.as3communicator.io.javascript
 
 			this.exposeMethod('getObjectTree',
 					objController.getObjectTree,
-					'(withProperties:Boolean) - Returns a representation of the tree'
-					+ ' structure of the current display object hierarchy. If withProperties is set to true,'
-				    + ' it will include "all" of the publicly available properties of that element.'
+					'(properties:String|Array) - Returns a representation of the tree structure of the current'
+				    + ' display object hierarchy. The properties argument can be set to "all", to retrieve all'
+				    + ' available properties, or set to an array that contains the properties that should be retrieved,'
+				    + ' like ["x", "y", "width", "height"]'
 			);
 
 			this.exposeMethod('help',
