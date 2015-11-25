@@ -48,7 +48,7 @@ package com.innogames.as3communicator.model
 			{
 				if(!DisplayObjectUtils.isNativeType(strCurrentProp, displayObject)) continue;
 
-				objResultXML.appendChild(<property name={strCurrentProp} value={displayObject[strCurrentProp]}/>);
+				objResultXML.@[strCurrentProp] = displayObject[strCurrentProp];
 			}
 
 			return objResultXML.toXMLString();
@@ -71,15 +71,15 @@ package com.innogames.as3communicator.model
 			return false;
 		}
 
-		private static function sortVector(a:String,
+		public static function sortVector(a:String,
 										   b:String):int
 		{
 			var intALength:int = a.length,
-					intBLength:int = b.length,
-					intIndex:int,
-					intReturnValue:int = -1,
-					strCharA:String,
-					strCharB:String;
+				intBLength:int = b.length,
+				intIndex:int,
+				intReturnValue:int = -1,
+				strCharA:String,
+				strCharB:String;
 
 			while(true)
 			{
@@ -111,7 +111,7 @@ package com.innogames.as3communicator.model
 			return intReturnValue;
 		}
 
-		private static function isNativeType(strCurrentProp:String,
+		public static function isNativeType(strCurrentProp:String,
 											 displayObject:DisplayObject):Boolean
 		{
 			var vecNativeTypes:Vector.<String> = new <String>[
@@ -129,9 +129,8 @@ package com.innogames.as3communicator.model
 			return (vecNativeTypes.indexOf(strQualifiedClassName) !== -1);
 		}
 
-		private static function getClassProperties(displayObject:DisplayObject):Vector.<String>
+		public static function getClassProperties(displayObject:DisplayObject):Vector.<String>
 		{
-			var uintFlags:uint = INCLUDE_ACCESSORS | INCLUDE_VARIABLES;
 			var strClassType:String = getQualifiedClassName(displayObject);
 			var strPropName:String;
 			var objClass:Class;
@@ -145,10 +144,11 @@ package com.innogames.as3communicator.model
 				objClass = null;
 			}
 
+			var vecClassProperties:Vector.<String> = new <String>[];
+
 			if(objClass)
 			{
 				var objClassDescription:Object = new DescribeTypeJSON().getInstanceDescription(objClass);
-				var vecClassProperties:Vector.<String> = new <String>[];
 
 				//get accessors
 				for each(var objCurrentProp:Object in objClassDescription.traits.accessors)
@@ -164,10 +164,6 @@ package com.innogames.as3communicator.model
 			}
 
 			return vecClassProperties;
-		}
-
-		public function DisplayObjectUtils()
-		{
 		}
 	}
 

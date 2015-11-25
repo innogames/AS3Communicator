@@ -30,14 +30,6 @@
       </configuration>
       <configuration name="AS3Communicator-lib" pure-as="true" output-type="Library" output-file="AS3Communicator-lib.swc" output-folder="$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs-test">
         <dependencies target-player="19.0">
-          <entries>
-            <entry library-id="73bf9b7e-7245-4001-9d46-6c948503dc43">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-id="15c9d22f-fb62-41b1-a30f-a223f4b8dd11">
-              <dependency linkage="Merged" />
-            </entry>
-          </entries>
           <sdk name="19" />
         </dependencies>
         <compiler-options />
@@ -59,29 +51,9 @@
     <orderEntry type="library" exported="" name="flexUnitTasks-4.2.0-20140410-sources" level="project" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="73bf9b7e-7245-4001-9d46-6c948503dc43" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/starling-1.5.1.innogames-custom.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
         <properties id="a712ff6c-e5e3-4cb9-89d4-08375035d32d" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/starling-1.5.1.innogames-custom.swc!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
-        <properties id="15c9d22f-fb62-41b1-a30f-a223f4b8dd11" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/snake-0.5.1.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

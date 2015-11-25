@@ -123,13 +123,32 @@ package com.innogames.as3communicator.controllers
 			return result;
 		}
 
-		public function getObjectTree():String
+		public function getObjectTree(...args:Array):String
 		{
 			var vecAllObjects:Vector.<DisplayObjectVO>;
 
 			vecAllObjects = this.findAllObjectsOnStage();
 
-			var result:String = this.objResultFormatter.formatTree(vecAllObjects);
+			var result:String;
+
+			if(args.length)
+			{
+				var vecProperties:Vector.<String>;
+				if(args[0] is Array)
+				{
+					vecProperties = Vector.<String>(args[0]);
+				}
+				else if(args[0] is String)
+				{
+					vecProperties = new<String>[args[0] as String];
+				}
+
+				result = this.objResultFormatter.formatTreeWithProperties(vecAllObjects, vecProperties);
+			}
+			else
+			{
+				result = this.objResultFormatter.formatTree(vecAllObjects);
+			}
 
 			DisplayObjectVOPool.instance.freeAllElements();
 
@@ -364,6 +383,12 @@ package com.innogames.as3communicator.controllers
 			}
 
 			return strFQI;
+		}
+
+
+		public function get formatter():IResultFormatter
+		{
+			return this.objResultFormatter;
 		}
 	}
 }

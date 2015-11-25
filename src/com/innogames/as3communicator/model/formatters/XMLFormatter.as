@@ -10,12 +10,6 @@ package com.innogames.as3communicator.model.formatters
 	 */
 	public class XMLFormatter implements IResultFormatter
 	{
-
-		public function XMLFormatter()
-		{
-		}
-
-
 		public function formatTree(vecObjects:Vector.<DisplayObjectVO>):String
 		{
 			var xmlTree:XML = <elements />;
@@ -26,22 +20,13 @@ package com.innogames.as3communicator.model.formatters
 		}
 
 
-		public function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>):String
+		public function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>, vecProperties:Vector.<String> = null):String
 		{
-			var strJSON:String;
-			var objJSON:Object = {elements: []};
-			for each (var objDO:DisplayObjectVO in vecObjects)
-			{
-				objJSON.elements[objJSON.elements.length] =
-				{
-					'type': getQualifiedClassName(objDO.displayObject),
-					'properties': DisplayObjectUtils.toJSON(objDO.displayObject)
-				};
-			}
+			var xmlTree:XML = <elements />;
 
-			strJSON = JSON.stringify(objJSON);
+			recursiveGetChildrenToXML(vecObjects, xmlTree, vecProperties);
 
-			return strJSON;
+			return xmlTree.toXMLString();
 		}
 
 
@@ -51,19 +36,39 @@ package com.innogames.as3communicator.model.formatters
 		}
 
 
-		private function recursiveGetChildrenToXML(vecAllObjects:Vector.<DisplayObjectVO>,
-												   objParentNode:XML):void
+		private function addProperties(child:XML, objDOVO:DisplayObjectVO, vecProperties:Vector.<String>):void
 		{
-			for each (var objDO:DisplayObjectVO in vecAllObjects)
-			{
-				var child:XML = <element name={objDO.displayObject.name}
-										 type={getQualifiedClassName(objDO.displayObject)}/>;
+			var blnAllProperties:Boolean = vecProperties[0].toLowerCase() === "all";
+			var vecClassProperties:Vector.<String> = DisplayObjectUtils.getClassProperties(objDOVO.displayObject);
 
-				if(objDO.hasChildren)
+			for each(var strCurrentProp:String in vecClassProperties)
+			{
+				if(!DisplayObjectUtils.isNativeType(strCurrentProp, objDOVO.displayObject)) continue;
+
+				if(blnAllProperties || vecProperties.indexOf(strCurrentProp) !== -1)
 				{
-					var children:XML = <children></children>;
-					this.recursiveGetChildrenToXML(objDO.children, children);
-					child.appendChild(children);
+					child.@[strCurrentProp] = objDOVO.displayObject[strCurrentProp];
+				}
+			}
+		}
+
+
+		private function recursiveGetChildrenToXML(vecAllObjects:Vector.<DisplayObjectVO>,
+												   objParentNode:XML, vecProperties:Vector.<String> = null):void
+		{
+			for each (var objDOVO:DisplayObjectVO in vecAllObjects)
+			{
+				var child:XML = <element name={objDOVO.displayObject.name}
+										 type={getQualifiedClassName(objDOVO.displayObject)}/>;
+
+				if(vecProperties)
+				{
+					this.addProperties(child, objDOVO, vecProperties);
+				}
+
+				if(objDOVO.hasChildren)
+				{
+					this.recursiveGetChildrenToXML(objDOVO.children, child, vecProperties);
 				}
 
 				objParentNode.appendChild(child);

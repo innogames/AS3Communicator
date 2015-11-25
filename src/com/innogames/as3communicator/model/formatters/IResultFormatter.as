@@ -10,7 +10,7 @@ package com.innogames.as3communicator.model.formatters
 	{
 		function formatTree(vecObjects:Vector.<DisplayObjectVO>):String;
 
-		function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>):String;
+		function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>, vecProperties:Vector.<String> = null):String;
 
 		function formatVO(objVO:DisplayObjectVO):String;
 	}

@@ -5,17 +5,13 @@ package com.innogames.as3communicator.model.formatters
 	import com.innogames.as3communicator.model.DisplayObjectUtils;
 	import com.innogames.as3communicator.model.DisplayObjectVO;
 
+	import flash.display.DisplayObject;
+
 	/**
 	 * This formatter converts DisplayObjectVOs into valid JSON.
 	 */
 	public class JSONFormatter implements IResultFormatter
 	{
-
-		public function JSONFormatter()
-		{
-		}
-
-
 		public function formatTree(vecObjects:Vector.<DisplayObjectVO>):String
 		{
 			var strJSON:String;
@@ -29,18 +25,12 @@ package com.innogames.as3communicator.model.formatters
 		}
 
 
-		public function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>):String
+		public function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>, vecProperties:Vector.<String> = null):String
 		{
 			var strJSON:String;
 			var objJSON:Object = {elements: []};
-			for each (var objDO:DisplayObjectVO in vecObjects)
-			{
-				objJSON.elements[objJSON.elements.length] =
-				{
-					'type': getQualifiedClassName(objDO.displayObject),
-					'properties': DisplayObjectUtils.toJSON(objDO.displayObject)
-				};
-			}
+
+			recursiveGetChildrenToJSON(vecObjects, objJSON.elements, vecProperties);
 
 			strJSON = JSON.stringify(objJSON);
 
@@ -54,23 +44,52 @@ package com.innogames.as3communicator.model.formatters
 		}
 
 
+		private function addProperties(objParent:Object, objDO:DisplayObject, vecProperties:Vector.<String>):void
+		{
+			var blnAllProperties:Boolean = vecProperties[0].toLowerCase() === "all";
+			var vecClassProperties: Vector.<String> = DisplayObjectUtils.getClassProperties(objDO);
+
+			for each(var strCurrentProp: String in vecClassProperties)
+			{
+				if (!DisplayObjectUtils.isNativeType(strCurrentProp, objDO)) continue;
+
+				if(blnAllProperties || vecProperties.indexOf(strCurrentProp) !== -1)
+				{
+					objParent[strCurrentProp] = objDO[strCurrentProp];
+				}
+			}
+		}
+
+
 		private function recursiveGetChildrenToJSON(vecAllObjects:Vector.<DisplayObjectVO>,
-													arrParent:Array):void
+													arrParent:Array,
+													vecProperties:Vector.<String> = null):void
 		{
 			var index:int = 0;
-			for each (var objDO:DisplayObjectVO in vecAllObjects)
+			for each (var objDOVO:DisplayObjectVO in vecAllObjects)
 			{
-				arrParent[index] = {
-					'type': getQualifiedClassName(objDO.displayObject),
-					'name': objDO.displayObject.name
-				};
+				var objCurrent:Object = {};
+				var objDO:DisplayObject = objDOVO.displayObject;
 
-				if(objDO.hasChildren)
+				objCurrent = {
+								'type': getQualifiedClassName(objDO),
+								'name': objDO.name
+							 };
+
+				if(vecProperties)
 				{
-					arrParent[index].children = [];
-					this.recursiveGetChildrenToJSON(objDO.children
-							as Vector.<DisplayObjectVO>, arrParent[index].children);
+					this.addProperties(objCurrent, objDO, vecProperties);
 				}
+
+				if(objDOVO.hasChildren)
+				{
+					objCurrent.children = [];
+					this.recursiveGetChildrenToJSON(objDOVO.children as Vector.<DisplayObjectVO>,
+													objCurrent.children,
+													vecProperties);
+				}
+
+				arrParent[index] = objCurrent;
 
 				++index;
 			}
