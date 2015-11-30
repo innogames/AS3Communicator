@@ -5,6 +5,10 @@ package com.innogames.as3communicator.model.formatters
 	import com.innogames.as3communicator.model.DisplayObjectUtils;
 	import com.innogames.as3communicator.model.DisplayObjectVO;
 
+	import flash.display.DisplayObject;
+
+	import flash.geom.Point;
+
 	/**
 	 * This formatter converts DisplayObjectVOs into valid XML.
 	 */
@@ -39,15 +43,25 @@ package com.innogames.as3communicator.model.formatters
 		private function addProperties(child:XML, objDOVO:DisplayObjectVO, vecProperties:Vector.<String>):void
 		{
 			var blnAllProperties:Boolean = vecProperties[0].toLowerCase() === "all";
-			var vecClassProperties:Vector.<String> = DisplayObjectUtils.getClassProperties(objDOVO.displayObject);
+			var objDO: DisplayObject = objDOVO.displayObject;
+			var vecClassProperties:Vector.<String> = DisplayObjectUtils.getClassProperties(objDO);
 
 			for each(var strCurrentProp:String in vecClassProperties)
 			{
-				if(!DisplayObjectUtils.isNativeType(strCurrentProp, objDOVO.displayObject)) continue;
+				if(!DisplayObjectUtils.isNativeType(strCurrentProp, objDO)) continue;
 
 				if(blnAllProperties || vecProperties.indexOf(strCurrentProp) !== -1)
 				{
-					child.@[strCurrentProp] = objDOVO.displayObject[strCurrentProp];
+					if(strCurrentProp !== 'x' && strCurrentProp !== 'y')
+					{
+						child.@[strCurrentProp] = objDOVO.displayObject[strCurrentProp];
+					}
+					else
+					{
+						var ptGlobal:Point = objDO.localToGlobal(new Point(objDO.x, objDO.y));
+						child.@[strCurrentProp] = ptGlobal[strCurrentProp];
+					}
+
 				}
 			}
 		}

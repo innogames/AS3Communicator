@@ -6,6 +6,7 @@ package com.innogames.as3communicator.model.formatters
 	import com.innogames.as3communicator.model.DisplayObjectVO;
 
 	import flash.display.DisplayObject;
+	import flash.geom.Point;
 
 	/**
 	 * This formatter converts DisplayObjectVOs into valid JSON.
@@ -55,7 +56,15 @@ package com.innogames.as3communicator.model.formatters
 
 				if(blnAllProperties || vecProperties.indexOf(strCurrentProp) !== -1)
 				{
-					objParent[strCurrentProp] = objDO[strCurrentProp];
+					if(strCurrentProp !== 'x' && strCurrentProp !== 'y')
+					{
+						objParent[strCurrentProp] = objDO[strCurrentProp];
+					}
+					else
+					{
+						var ptGlobal:Point = objDO.localToGlobal(new Point(objDO.x, objDO.y));
+						objParent[strCurrentProp] = ptGlobal[strCurrentProp];
+					}
 				}
 			}
 		}
