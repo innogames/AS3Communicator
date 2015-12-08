@@ -320,8 +320,8 @@ package com.innogames.as3communicator.controllers
 			var objCurrent:DisplayObject;
 			var arrObjects:Array = this.objParentContainer.getObjectsUnderPoint(new Point(evt.stageX, evt.stageY));
 
-			for each(var obj:DisplayObject in arrObjects)
-			{
+			for (var i:int = arrObjects.length - 1 ; i >= 0; i--) {
+				var obj:DisplayObject = arrObjects[i];
 				if(obj.parent && obj.parent is InteractiveObject)
 				{
 					obj = obj.parent;
