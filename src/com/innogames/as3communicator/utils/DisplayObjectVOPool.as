@@ -11,6 +11,9 @@ package com.innogames.as3communicator.utils
 	{
 		private static var objInstance:DisplayObjectVOPool;
 
+		private var objFirstElement:PoolElement;
+
+
 		public static function get instance():DisplayObjectVOPool
 		{
 			var objInstance:DisplayObjectVOPool = DisplayObjectVOPool.objInstance;
@@ -33,7 +36,6 @@ package com.innogames.as3communicator.utils
 			this.objFirstElement = new PoolElement();
 			this.objFirstElement.objVO = new DisplayObjectVO();
 		}
-		private var objFirstElement:PoolElement;
 
 		public function getElement(objDO:DisplayObject = null, vecChildren:Vector.<DisplayObjectVO> = null):DisplayObjectVO
 		{
@@ -85,6 +87,7 @@ package com.innogames.as3communicator.utils
 				objVO.displayObject = null;
 
 				objCurrent = objCurrent.objNext;
+
 				if(!objCurrent) break;
 			}
 		}

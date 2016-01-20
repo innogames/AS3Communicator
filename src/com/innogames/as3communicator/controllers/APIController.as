@@ -128,26 +128,28 @@ package com.innogames.as3communicator.controllers
 			var vecAllObjects:Vector.<DisplayObjectVO>;
 
 			vecAllObjects = this.findAllObjectsOnStage();
-
-			var result:String;
-
-			if(args.length)
+			try
 			{
-				var vecProperties:Vector.<String>;
-				if(args[0] is Array)
-				{
-					vecProperties = Vector.<String>(args[0]);
-				}
-				else if(args[0] is String)
-				{
-					vecProperties = new<String>[args[0] as String];
-				}
+				var result: String;
 
-				result = this.objResultFormatter.formatTreeWithProperties(vecAllObjects, vecProperties);
+				if (args.length) {
+					var vecProperties: Vector.<String>;
+					if (args[0] is Array) {
+						vecProperties = Vector.<String>(args[0]);
+					}
+					else if (args[0] is String) {
+						vecProperties = new <String>[args[0] as String];
+					}
+
+					result = this.objResultFormatter.formatTreeWithProperties(vecAllObjects, vecProperties);
+				}
+				else {
+					result = this.objResultFormatter.formatTree(vecAllObjects);
+				}
 			}
-			else
+			catch(e:Error)
 			{
-				result = this.objResultFormatter.formatTree(vecAllObjects);
+				return e.message + e.getStackTrace();
 			}
 
 			DisplayObjectVOPool.instance.freeAllElements();

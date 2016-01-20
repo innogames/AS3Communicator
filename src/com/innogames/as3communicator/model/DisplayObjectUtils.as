@@ -124,7 +124,21 @@ package com.innogames.as3communicator.model
 				'Boolean'
 			];
 
-			var strQualifiedClassName:String = getQualifiedClassName(displayObject[strCurrentProp]);
+			// use a try-catch, because some custom getters might throw errors
+			try
+			{
+				var objProperty: Object = displayObject[strCurrentProp];
+			}
+			catch(e:Error)
+			{
+				/**
+				 * if an error is caught from accessing an object property, it will be from a custom class
+				 * and the property itself will definitely not be a native one.
+				 */
+				return false;
+			}
+
+			var strQualifiedClassName: String = getQualifiedClassName(objProperty);
 
 			return (vecNativeTypes.indexOf(strQualifiedClassName) !== -1);
 		}
