@@ -64,12 +64,13 @@ package com.innogames.as3communicator.model.formatters
 		{
 			var vecResult	:Vector.<String> = new<String>[];
 			var strCurrent	:String;
-			var intLen		:int = vecFirst.length;
+			var intLen		:int = vecFirst.length - 1;
 			var i			:int;
 
-			while(--intLen)
+			while(intLen >= 0)
 			{
 				strCurrent = vecFirst[intLen];
+				intLen--;
 				if(vecSecond.indexOf(strCurrent) === -1) continue;
 
 				vecResult[i++] = strCurrent;
