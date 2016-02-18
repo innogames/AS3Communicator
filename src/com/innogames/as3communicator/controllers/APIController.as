@@ -303,7 +303,7 @@ package com.innogames.as3communicator.controllers
 		private function getPropertiesFromArgs(args:Array):Vector.<String>{
 			var vecProperties:Vector.<String>;
 
-			if (args.length) {
+			if (args && args.length) {
 				if (args[0] is Array) {
 					vecProperties = Vector.<String>(args[0]);
 				}

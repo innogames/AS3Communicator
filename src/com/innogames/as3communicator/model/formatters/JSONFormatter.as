@@ -37,11 +37,11 @@ package com.innogames.as3communicator.model.formatters
 		}
 
 
-		public function formatVO(objVO:DisplayObjectVO, blnAllProperties:Boolean = false):String
+		public function formatVO(objVO:DisplayObjectVO, vecProperties:Vector.<String>):String
 		{
-			if(blnAllProperties)
+			if(vecProperties && vecProperties.length)
 			{
-				return this.formatTreeWithProperties(new<DisplayObjectVO>[objVO], new<String>["all"]);
+				return this.formatTreeWithProperties(new<DisplayObjectVO>[objVO], vecProperties);
 			}
 
 			return this.formatTree(new<DisplayObjectVO>[objVO]);

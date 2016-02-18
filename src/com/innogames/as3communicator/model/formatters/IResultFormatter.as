@@ -12,6 +12,6 @@ package com.innogames.as3communicator.model.formatters
 
 		function formatTreeWithProperties(vecObjects:Vector.<DisplayObjectVO>, vecProperties:Vector.<String> = null):String;
 
-		function formatVO(objVO:DisplayObjectVO, blnAllProperties:Boolean = false):String;
+		function formatVO(objVO:DisplayObjectVO, vecProperties:Vector.<String>):String;
 	}
 }
