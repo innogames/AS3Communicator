@@ -38,6 +38,12 @@ package com.innogames.as3communicator.controllers
 
 		private static var objInstance:APIController;
 
+		private var blnHighlightUnderCursor:Boolean,
+					blnTraceCursorPosition:Boolean,
+					objPreviousHighlightedObject:DisplayObject,
+					objResultFormatter:IResultFormatter,
+					objParentContainer:DisplayObjectContainer;
+
 		public static function get instance():APIController
 		{
 			var objInstance:APIController = APIController.objInstance;
@@ -60,11 +66,6 @@ package com.innogames.as3communicator.controllers
 			APIController.objInstance = this;
 			this.objResultFormatter = new JSONFormatter();
 		}
-		private var blnHighlightUnderCursor:Boolean,
-				blnTraceCursorPosition:Boolean,
-				objPreviousHighlightedObject:DisplayObject,
-				objResultFormatter:IResultFormatter,
-				objParentContainer:DisplayObjectContainer;
 
 		public function get parentContainer():DisplayObjectContainer
 		{
@@ -130,22 +131,16 @@ package com.innogames.as3communicator.controllers
 			vecAllObjects = this.findAllObjectsOnStage();
 			try
 			{
+				var vecProperties:Vector.<String> = this.getPropertiesFromArgs(args);
 				var result: String;
 
-				if (args.length) {
-					var vecProperties: Vector.<String>;
-					if (args[0] is Array) {
-						vecProperties = Vector.<String>(args[0]);
-					}
-					else if (args[0] is String) {
-						vecProperties = new <String>[args[0] as String];
-					}
-
+				if (vecProperties) {
 					result = this.objResultFormatter.formatTreeWithProperties(vecAllObjects, vecProperties);
 				}
 				else {
 					result = this.objResultFormatter.formatTree(vecAllObjects);
 				}
+				return result;
 			}
 			catch(e:Error)
 			{
@@ -238,12 +233,13 @@ package com.innogames.as3communicator.controllers
 			return result;
 		}
 
-		public function findObject(strName:String):String
+		public function findObject(strName:String, ...args:Array):String
 		{
 			var objDisplayObject:DisplayObjectVO = new FindObjectVOByNameCommand().execute(strName,
 							this.findAllObjectsOnStage()) as DisplayObjectVO;
+			var vecProperties:Vector.<String> = this.getPropertiesFromArgs(args);
 
-			var result:String = this.objResultFormatter.formatVO(objDisplayObject);
+			var result:String = this.objResultFormatter.formatVO(objDisplayObject, vecProperties);
 
 			DisplayObjectVOPool.instance.freeAllElements();
 
@@ -302,6 +298,21 @@ package com.innogames.as3communicator.controllers
 			this.objParentContainer.addEventListener(MouseEvent.MOUSE_MOVE, this.highlightMoveHandler);
 			this.blnHighlightUnderCursor = true;
 			return "Highlighting under cursor switched on.";
+		}
+
+		private function getPropertiesFromArgs(args:Array):Vector.<String>{
+			var vecProperties:Vector.<String>;
+
+			if (args.length) {
+				if (args[0] is Array) {
+					vecProperties = Vector.<String>(args[0]);
+				}
+				else if (args[0] is String) {
+					vecProperties = new <String>[args[0] as String];
+				}
+			}
+
+			return vecProperties;
 		}
 
 		private function mouseMoveHandler(event:MouseEvent):void

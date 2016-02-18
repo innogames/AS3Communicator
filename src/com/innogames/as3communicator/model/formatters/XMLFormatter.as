@@ -2,7 +2,6 @@ package com.innogames.as3communicator.model.formatters
 {
 	import avmplus.getQualifiedClassName;
 
-	import com.innogames.as3communicator.model.DisplayObjectUtils;
 	import com.innogames.as3communicator.model.DisplayObjectVO;
 
 	import flash.display.DisplayObject;
@@ -32,9 +31,14 @@ package com.innogames.as3communicator.model.formatters
 		}
 
 
-		public function formatVO(objVO:DisplayObjectVO):String
+		public function formatVO(objVO:DisplayObjectVO, blnAllProperties:Boolean = false):String
 		{
-			return DisplayObjectUtils.toXML(objVO.displayObject);
+			if(blnAllProperties)
+			{
+				return this.formatTreeWithProperties(new<DisplayObjectVO>[objVO], new<String>["all"]);
+			}
+
+			return formatTree(new<DisplayObjectVO>[objVO]);
 		}
 
 

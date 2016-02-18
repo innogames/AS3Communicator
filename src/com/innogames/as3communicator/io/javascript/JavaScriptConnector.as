@@ -128,9 +128,9 @@ package com.innogames.as3communicator.io.javascript
 
 			this.exposeMethod('findObjectByName',
 					objController.findObject,
-					'(name:String) - Tries to find an object by the given name,'
-					+ ' or array access (same as for clickObject). Will include all '
-					+ 'properties.'
+					'(name:String, properties:String|Array) - Tries to find an object by the given name,'
+					+ ' or array access (same as for clickObject). The properties argument works the same'
+				    + ' like with getObjectTree or other methods.'
 			);
 
 			this.exposeMethod('getAllObjectsAndProperties',

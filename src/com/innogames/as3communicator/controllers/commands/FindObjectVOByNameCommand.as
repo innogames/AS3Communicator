@@ -20,11 +20,11 @@ package com.innogames.as3communicator.controllers.commands
 			var vecObjectList:Vector.<DisplayObjectVO> = args[1] as Vector.<DisplayObjectVO>;
 
 			var blnFound:Boolean,
-					blnLookingForFQI:Boolean,
-					childObject:DisplayObjectVO,
-					currentDO:DisplayObjectVO,
-					currentNamePart:String,
-					restNamePart:String;
+				blnLookingForFQI:Boolean,
+				childObject:DisplayObjectVO,
+				currentDO:DisplayObjectVO,
+				currentNamePart:String,
+				restNamePart:String;
 
 			/**
 			 * First look at dot-notation "parent.child.subchild"
@@ -98,7 +98,7 @@ package com.innogames.as3communicator.controllers.commands
 			}
 
 			var i:int = -1,
-					len:int = vecObjectList.length;
+				len:int = vecObjectList.length;
 			while(++i !== len)
 			{
 				currentDO = vecObjectList[i] as DisplayObjectVO;
