@@ -11,10 +11,7 @@ package com.innogames.as3communicator.controllers.commands
 	{
 		public function execute(...args:Array):Object
 		{
-			if(!args
-					|| args.length < 2
-					|| !(args[0] is DisplayObject)
-					|| !(args[1] is String))
+			if(!this.hasValidArguments(args))
 			{
 				throw new Error(ErrorConstants.INCORRECT_ARGUMENTS);
 			}
@@ -28,6 +25,15 @@ package com.innogames.as3communicator.controllers.commands
 			}
 
 			return objTargetObject[strPropertyName];
+		}
+
+
+		private function hasValidArguments(args:Array):Boolean
+		{
+			return args
+				&& args.length === 2
+				&& (args[0] is DisplayObject)
+				&& (args[1] is String);
 		}
 	}
 }

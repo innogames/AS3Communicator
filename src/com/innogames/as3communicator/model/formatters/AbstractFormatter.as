@@ -45,7 +45,11 @@ package com.innogames.as3communicator.model.formatters
 				}
 				else
 				{
-					var ptGlobal:Point = objDO.localToGlobal(new Point(objDO.x, objDO.y));
+					/**
+					 * always convert the current DisplayObject's origin point (0,0) into the global stage
+					 * coordinate space
+					 */
+					var ptGlobal:Point = objDO.localToGlobal(new Point());
 					currentValue = ptGlobal[strCurrentProp];
 				}
 
