@@ -41,7 +41,7 @@ package com.innogames.as3communicator.io.javascript
 				}
 				window.showString = function(msg)
 				{
-					console.log(msg);
+					console.log(unescape(msg));
 				}
 				if(!$flash)
 				{
@@ -81,7 +81,7 @@ package com.innogames.as3communicator.io.javascript
 
 			try
 			{
-				ExternalInterface.call('showString', esape(strMessage));
+				ExternalInterface.call('showString', escape(strMessage));
 			}
 			catch(logError:Error)
 			{
@@ -121,6 +121,14 @@ package com.innogames.as3communicator.io.javascript
 					'(name:String) - Clicks on the specified object, if it can be'
 					+ ' found by the name. Use FullyQualifiedIdentifiers like'
 					+ ' "myObject.child.button" or array access, like "[0][1][0]'
+			);
+
+			this.exposeMethod(
+					'hoverObject',
+					objController.hoverObject,
+							'(name:String) - Hovers over the specified object, if it can be'
+							+ ' found by the name. Use FullyQualifiedIdentifiers like'
+							+ ' "myObject.child.button" or array access, like "[0][1][0]'
 			);
 
 			this.exposeMethod('countObjectsOnStage',
