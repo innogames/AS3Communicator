@@ -39,7 +39,10 @@ package com.innogames.as3communicator.io.javascript
 					$flash = objCurrent;
 					break;
 				}
-
+				window.showString = function(msg)
+				{
+					console.log(unescape(msg));
+				}
 				if(!$flash)
 				{
 					console.log('Didn\'t find object with name "'+ strDOMName +'"');
@@ -78,7 +81,7 @@ package com.innogames.as3communicator.io.javascript
 
 			try
 			{
-				ExternalInterface.call('console.log', strMessage);
+				ExternalInterface.call('showString', escape(strMessage));
 			}
 			catch(logError:Error)
 			{
@@ -118,6 +121,22 @@ package com.innogames.as3communicator.io.javascript
 					'(name:String) - Clicks on the specified object, if it can be'
 					+ ' found by the name. Use FullyQualifiedIdentifiers like'
 					+ ' "myObject.child.button" or array access, like "[0][1][0]'
+			);
+
+			this.exposeMethod(
+					'hoverObject',
+					objController.hoverObject,
+							'(name:String) - Hovers over the specified object, if it can be'
+							+ ' found by the name. Use FullyQualifiedIdentifiers like'
+							+ ' "myObject.child.button" or array access, like "[0][1][0]'
+			);
+
+			this.exposeMethod(
+					'stopHoverObject',
+					objController.stopHoverObject,
+							'(name:String) - Stopd the hovering over the specified object, if it can be'
+							+ ' found by the name. Use FullyQualifiedIdentifiers like'
+							+ ' "myObject.child.button" or array access, like "[0][1][0]'
 			);
 
 			this.exposeMethod('countObjectsOnStage',

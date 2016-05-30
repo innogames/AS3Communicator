@@ -8,7 +8,9 @@ package com.innogames.as3communicator.controllers
 	import com.innogames.as3communicator.controllers.commands.CountObjectsOnStageCommand;
 	import com.innogames.as3communicator.controllers.commands.FindObjectVOByNameCommand;
 	import com.innogames.as3communicator.controllers.commands.GetObjectPropertyCommand;
+	import com.innogames.as3communicator.controllers.commands.HoverObjectCommand;
 	import com.innogames.as3communicator.controllers.commands.SetObjectPropertyCommand;
+	import com.innogames.as3communicator.controllers.commands.StopHoverObjectCommand;
 	import com.innogames.as3communicator.controllers.commands.ToggleHighlightCommand;
 	import com.innogames.as3communicator.model.DisplayObjectVO;
 	import com.innogames.as3communicator.model.formatters.IResultFormatter;
@@ -168,6 +170,34 @@ package com.innogames.as3communicator.controllers
 			if(!objectToClick) return 'Object "' + strName + '" not found.';
 
 			var result:String = new ClickObjectCommand().execute(objectToClick) as String;
+
+			DisplayObjectVOPool.instance.freeAllElements();
+
+			return result;
+		}
+
+		public function hoverObject(strName:String):String
+		{
+			var objectToHoverk:DisplayObject = this.findObjectByName(strName,
+					DisplayObjectVOIteratorUtil.getChildren(this.objParentContainer));
+
+			if(!objectToHoverk) return 'Object "' + strName + '" not found.';
+
+			var result:String = new HoverObjectCommand().execute(objectToHoverk) as String;
+
+			DisplayObjectVOPool.instance.freeAllElements();
+
+			return result;
+		}
+
+		public function stopHoverObject(strName:String):String
+		{
+			var objectToHoverk:DisplayObject = this.findObjectByName(strName,
+					DisplayObjectVOIteratorUtil.getChildren(this.objParentContainer));
+
+			if(!objectToHoverk) return 'Object "' + strName + '" not found.';
+
+			var result:String = new StopHoverObjectCommand().execute(objectToHoverk) as String;
 
 			DisplayObjectVOPool.instance.freeAllElements();
 
