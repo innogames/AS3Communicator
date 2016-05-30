@@ -131,6 +131,14 @@ package com.innogames.as3communicator.io.javascript
 							+ ' "myObject.child.button" or array access, like "[0][1][0]'
 			);
 
+			this.exposeMethod(
+					'stopHoverObject',
+					objController.stopHoverObject,
+							'(name:String) - Stopd the hovering over the specified object, if it can be'
+							+ ' found by the name. Use FullyQualifiedIdentifiers like'
+							+ ' "myObject.child.button" or array access, like "[0][1][0]'
+			);
+
 			this.exposeMethod('countObjectsOnStage',
 					objController.countObjectsOnStage,
 					'() - Counts all objects on parentContainer recursively and'
