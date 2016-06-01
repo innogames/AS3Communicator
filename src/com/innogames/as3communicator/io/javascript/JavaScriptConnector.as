@@ -1,5 +1,6 @@
 package com.innogames.as3communicator.io.javascript
 {
+
 	import com.innogames.as3communicator.controllers.APIController;
 	import com.innogames.as3communicator.utils.DebugLogger;
 	import com.innogames.as3communicator.utils.IDebugLogger;
@@ -39,10 +40,6 @@ package com.innogames.as3communicator.io.javascript
 					$flash = objCurrent;
 					break;
 				}
-				window.showString = function(msg)
-				{
-					console.log(unescape(msg));
-				}
 				if(!$flash)
 				{
 					console.log('Didn\'t find object with name "'+ strDOMName +'"');
@@ -81,7 +78,7 @@ package com.innogames.as3communicator.io.javascript
 
 			try
 			{
-				ExternalInterface.call('showString', escape(strMessage));
+				ExternalInterface.call('console.log', strMessage);
 			}
 			catch(logError:Error)
 			{

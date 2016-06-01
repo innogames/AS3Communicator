@@ -50,6 +50,10 @@ package com.innogames.as3communicator.model.formatters
 
 		final override protected function addPropertyToChild(child:Object, propertyName:String, value:*):void
 		{
+			// External interface's JSON encoding is broken. We have to manually escape strings here.
+			if (escape(value) != value) {
+				value = escape(value);
+			}
 			child[propertyName] = value;
 		}
 
