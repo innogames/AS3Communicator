@@ -75,7 +75,8 @@ package com.innogames.as3communicator.io.javascript
 		public function log(strMessage:String):void
 		{
 			if(!(DebugLogger.instance.logOptions & DebugLogger.LOG_TO_JS_CONSOLE)) return;
-
+			//Prevent the Flash Player warning message, see http://stackoverflow.com/questions/26157126
+			strMessage = escape(strMessage).replace(/\./g, "%2E").replace(/\:/g, "%3A").replace(/\//g, "%2F");
 			try
 			{
 				ExternalInterface.call('console.log', strMessage);
