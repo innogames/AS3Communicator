@@ -16,9 +16,9 @@ package com.innogames.as3communicator.controllers.commands
 		{
 			if(!args
 					|| args.length !== 3
-					|| !(args[0] is DisplayObjectContainer)
+					|| !(args[0] is int)
 					|| !(args[1] is int)
-					|| !(args[2] is int)) throw new Error(ErrorConstants.INCORRECT_ARGUMENTS);
+					|| !(args[2] is DisplayObjectContainer)) throw new Error(ErrorConstants.INCORRECT_ARGUMENTS);
 
 			var ptDest:Point = new Point(args[0] as int, args[1] as int);
 			var objParentContainer:DisplayObjectContainer = args[2] as DisplayObjectContainer;
