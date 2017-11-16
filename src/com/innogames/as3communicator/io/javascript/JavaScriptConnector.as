@@ -208,7 +208,7 @@ package com.innogames.as3communicator.io.javascript
 			this.exposeMethod('callObjectMethod',
 					objController.callObjectMethod,
 					'(objectName:String, propertyName:String, params:Array) - Let you call a method'
-					+ 'of the given object. You could also specify method parameters. Only primitive'
+					+ ' of the given object. You could also specify method parameters. Only primitive'
 					+ ' types are allowed as parameters. The parameters are optional.'
 			);
 
