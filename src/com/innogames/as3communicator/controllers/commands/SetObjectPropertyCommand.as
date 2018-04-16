@@ -31,7 +31,7 @@ package com.innogames.as3communicator.controllers.commands
 
 			try
 			{
-				if(propertyValue['containsAny'](['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']))
+				if(propertyValue['containsOnly'](['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']))
 				{
 					objTargetObject[strPropertyName] = parseFloat(propertyValue);
 				}

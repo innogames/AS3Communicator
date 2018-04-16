@@ -12,9 +12,9 @@ String.prototype['startsWith'] =
 		};
 
 String.prototype['contains'] =
-		function (...arrCharacters:Array):Boolean
+		function (arrCharacters:Array):Boolean
 		{
-			for(var i:int, len:int = arrCharacters.length; i < len; ++i)
+			for(var i:int = 0, len:int = arrCharacters.length; i < len; ++i)
 			{
 				if(this.indexOf(arrCharacters[i] as String) === -1) return false;
 			}
@@ -23,14 +23,28 @@ String.prototype['contains'] =
 		};
 
 String.prototype['containsAny'] =
-		function (...arrCharacters:Array):Boolean
+		function (arrCharacters:Array):Boolean
 		{
-			for(var i:int, len:int = arrCharacters.length; i < len; ++i)
+			for(var i:int = 0, len:int = arrCharacters.length; i < len; ++i)
 			{
-				if(this.indexOf(arrCharacters[i] as String) === -1) return true;
+				if (this.indexOf(arrCharacters[i] as String) != -1) {
+					return true;
+				}
+			}
+			return false;
+		};
+
+String.prototype['containsOnly'] =
+		function (arrCharacters:Array):Boolean
+		{
+			for(var i:int = 0, len:int = this.length; i < len; ++i)
+			{
+				if(arrCharacters.indexOf(this.charAt(i)) === -1) {
+					return false;
+				}
 			}
 
-			return false;
+			return true;
 		};
 
 String.prototype['containsIgnoreCase'] =
