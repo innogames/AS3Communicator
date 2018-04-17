@@ -39,7 +39,7 @@ package com.innogames.as3communicator.controllers.commands
 			/**
 			 * Then look at array-access "parent[0].subchild"
 			 */
-			else if(strName['contains'](BRACKET_OPEN, BRACKET_CLOSE))
+			else if(strName['contains']([BRACKET_OPEN, BRACKET_CLOSE]))
 			{
 				if(!strName['startsWith'](BRACKET_OPEN))
 				{

@@ -27,7 +27,7 @@ String.prototype['containsAny'] =
 		{
 			for(var i:int = 0, len:int = arrCharacters.length; i < len; ++i)
 			{
-				if (this.indexOf(arrCharacters[i] as String) != -1) {
+				if(this.indexOf(arrCharacters[i] as String) != -1) {
 					return true;
 				}
 			}
@@ -59,7 +59,7 @@ String.prototype['containsBefore'] =
 			var intLowIndex:int = this.indexOf(strShouldBeAfter);
 			if(intLowIndex === -1)
 			{
-				return this['contains'](strShouldBeBefore);
+				return this['contains']([strShouldBeBefore]);
 			}
 
 			var intHighIndex:int = this.indexOf(strShouldBeBefore);
