@@ -3,6 +3,7 @@ package com.innogames.as3communicator.controllers
 
 	import avmplus.getQualifiedClassName;
 
+	import com.innogames.as3communicator.controllers.commands.CallObjectMethodCommand;
 	import com.innogames.as3communicator.controllers.commands.ClickAtPositionCommand;
 	import com.innogames.as3communicator.controllers.commands.ClickObjectCommand;
 	import com.innogames.as3communicator.controllers.commands.CountObjectsOnStageCommand;
@@ -243,6 +244,24 @@ package com.innogames.as3communicator.controllers
 			}
 
 			var result:String = new SetObjectPropertyCommand().execute(targetObject, propertyName, value) as String;
+
+			DisplayObjectVOPool.instance.freeAllElements();
+
+			return result;
+		}
+		
+		public function callObjectMethod(objectName:String,
+										  methodName:String,
+										  params:Array = null):String
+		{
+			var targetObject:DisplayObject = this.findObjectByName(objectName, DisplayObjectVOIteratorUtil.getChildren(this.objParentContainer));
+
+			if(!targetObject)
+			{
+				return 'Couldn\'t find object with name \'' + objectName + '\'';
+			}
+
+			var result:String = new CallObjectMethodCommand().execute(targetObject, methodName, params ? params : []) as String;
 
 			DisplayObjectVOPool.instance.freeAllElements();
 

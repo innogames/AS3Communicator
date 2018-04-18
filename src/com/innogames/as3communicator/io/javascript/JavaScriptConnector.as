@@ -202,6 +202,13 @@ package com.innogames.as3communicator.io.javascript
 					+ ' a TextField, to change it\'s content. The type of the value is dependent on the'
 					+ ' property you\'re about to change.'
 			);
+			
+			this.exposeMethod('callObjectMethod',
+					objController.callObjectMethod,
+					'(objectName:String, propertyName:String, params:Array) - Let you call a method'
+					+ ' of the given object. You could also specify method parameters. Only primitive'
+					+ ' types are allowed as parameters. The parameters are optional.'
+			);
 
 			this.exposeMethod('toggleHighlight',
 					objController.toggleHighlight,
